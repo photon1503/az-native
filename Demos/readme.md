@@ -60,7 +60,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Docker Development Workflow    
 - Resiliency and Healt Checks    
 - Managing State in Containers    
-- Configuration Management Options (Env, Config Mgmt, App Config)
+- Configuration Management Options (Env Variables, ConfigMap, Azure App Config Service)
 - Debugging Containers
 
 ## Hosting Microservices on Azure Kubernetes Services
