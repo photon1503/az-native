@@ -48,13 +48,6 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Access: Api Management & Application Gateway
 - Security: Microsoft Identity & Managed Identites
 
-## Data Storage: Azure SQL and Blob Storage
-
-- Track and Record Data Changes using Azure SQL Change Data Capture
-- Materialized View Pattern
-- Azure SQL Change Feed
-- Blob Storage and Claim Check Pattern
-
 ## Containers - Docker
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
@@ -99,6 +92,13 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Deduplication and Transactions
 - Event Sourcing and Integration Events
 - Analysing and Responding To Events unsing Azure Stream Analytics
+
+## Azure SQL and Blob Storage
+
+- Track and Record Data Changes using Azure SQL Change Data Capture
+- Materialized View Pattern
+- Azure SQL bindings for Azure Functions
+- Blob Storage and Claim Check Pattern
 
 ## Managing and Securing Api Access
 
