@@ -48,20 +48,19 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Access: Api Management & Application Gateway
 - Security: Microsoft Identity & Managed Identites
 
-## Containers - Docker
+## Managing Containers - Docker
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
-- Resiliency and Healt Checks    
-- Managing State in Containers    
+- Stateful Containers using Azure Blob Storage
 - Configuration Management Options (Env Variables, ConfigMap, Azure App Config Service)
 
 ## Hosting Microservices on Azure Kubernetes Services
 
 - Recap: Basic Terms (Pod, LB, ... )
-- Using Config Map & Secrets to configure Microservices
+- Using Config Map & Secrets
 - Implementing Helm charts
-- Supporting Resilience and Health Probes in Microservices
+- Supporting Resilience and Health Checks
 - Kubernetes Routing Methods
 - Understanding and using Sidecar Pattern
 - Debugging with Bidge to Kubernetes
@@ -95,6 +94,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 ## Azure SQL and Blob Storage
 
+- Provisioning Consumption based Databases for Development
 - Track and Record Data Changes using Azure SQL Change Data Capture
 - Materialized View Pattern
 - Azure SQL bindings for Azure Functions
