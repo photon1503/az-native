@@ -2,11 +2,11 @@
 
 Das Seminar richtet sich an Azure Entwickler und Software Architects welche einen Überblick über die Kernelemente der Entwicklung und Bereitstelle einer Event Driven Appication in Microsoft Azure lernen wollen. 
 
-Neben den Theorieteilen der Modules, refactoren wir eine App bestehend aus klassischem Api-Monolythen mit UI in Microservices (Catalog, State, Payment, Delivery) und optimieren das Configurations Management für Container. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernets sowie Datenspeicherung und effizientes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server Features wie SQL Change Data Capture. 
+Neben den Theorieteilen der Modules, gestalten wir eine App bestehend aus klassischem Api-Monolythen mit UI in Microservices (Catalog, State, Payment, Delivery) um, und optimieren das Konfiguration Management für Container. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernets (Health Probes), sowie Datenspeicherung und effizientes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server Features wie SQL Change Data Capture. 
 
 Cosmos DB, sein Change Feed wird dann den Übergang in die Welt der Event Driven Applications darstellen. Teile der Microservices implementieren wir Serverless mit Hilfe von Azure Functions und Nutzen dabei auch Azure Event Hub und Azure Service Bus. In diesem Abschnitt werden sowohl einige Cloud Design Patterns an teilen der App vermittelt. 
 
-Last but not least publizieren und sichern wir die App, und deren Mikroservices mit Api Management und Application Gateway um dann noch unser Reactive Angular UI mit Client Side (NgRx) State in echtzeit mittels Azure PubSub aktuell zu halten.
+Last but not least publizieren und sichern wir die App, und deren Mikroservices mit Api Management und Application Gateway, um dann noch unser Reactive Angular UI mit Client Side (NgRx) State in echtzeit mittels Azure PubSub aktuell zu halten.
 
 In allen Phasen wird Authentication und Authorization mittels Microsoft Identity sichergestellt und ein Automatisiertes Deployment der App ist mittels Azure CLI und / oder BICEP gewährleistet.
 
