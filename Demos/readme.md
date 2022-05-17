@@ -30,13 +30,13 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 ### Introduction to Microservices and Event Driven Applications
 
-Why Microservices
-Monolyth vs Microservices
-Why Event Driven Applications
-Open Api & Swagger
-Creating Software Architecture Diagrams
-What are Cloud Architecture Design Patterns
-The sample Application
+- Why Microservices
+- Monolyth vs Microservices
+- Why Event Driven Applications
+- Open Api & Swagger
+- Creating Software Architecture Diagrams
+- What are Cloud Architecture Design Patterns
+- The sample Application
 
 ### Building Blocks and Architecture Overview
 
