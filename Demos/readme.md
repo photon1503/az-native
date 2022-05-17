@@ -2,7 +2,7 @@
 
 Das Seminar richtet sich an Azure Entwickler und Software Architects welche einen Überblick über die Kernelemente der Entwicklung und Bereitstelle einer Event Driven Appication in Microsoft Azure lernen wollen. 
 
-Neben den Theorieteilen der Modules, refactoren wir eine App bestehend aus klassischem Api-Monolythen mit UI in Microservices, und optimieren das Configurations Management für Container. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernets sowie Datenspeicherung und effizientes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server und Blog Storage. 
+Neben den Theorieteilen der Modules, refactoren wir eine App bestehend aus klassischem Api-Monolythen mit UI in Microservices (Catalog & State, Payment, Delivery) und optimieren das Configurations Management für Container. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernets sowie Datenspeicherung und effizientes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server und Blog Storage. 
 
 Cosmos DB, sein Change Feed wird dann den Übergang in die Welt der Event Driven Applications darstellen. Teile der Microservices implementieren wir Serverless mit Hilfe von Azure Functions und Nutzen dabei auch Azure Event Hub und Azure Service Bus. In diesem Abschnitt werden sowohl einige Cloud Design Patterns an teilen der App vermittelt. 
 
