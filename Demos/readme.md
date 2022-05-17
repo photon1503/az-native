@@ -59,16 +59,15 @@ The sample Application
 - Using Azure Durable Entites
 - Long running processes and background Tasks
 
-
 ## Managing Asynchronous event-based communication
 
-- Service Bus, Event Grid, Event Hub Recap
+- Service Bus & Event Hub Recap
 - Common Cloud Design Patterns used with Even Driven Architecture
 - Deduplication and Transactions
 - Event Sourcing and Integration Events
-- 
+- Analysing and Responding To Events unsing Azure Stream Analytics
 
-## Managing Client Access and Connecting FrontEnds
+## Managing and Securing Api Access
 
 - Recap API Management and Application Gateway
 - Understanding Gateway Pattern and Backends for Frontends Pattern
@@ -76,4 +75,10 @@ The sample Application
 - Securing Api Access using Managed Identites
 - Using Redis Cache in API Management
 - Implementing API Gateways using Envoy
-- Real Time Communications from Service to UI using Azure PubSub
+
+## Connecting Reactive Frontends
+
+- Event Grid Recap
+- Publishing Frondend related Events to Azure Event Grid
+- Real Time Options: SignalR vs Azure PubSub
+- Consuming Event Grid to implement a Real Time connected UI
