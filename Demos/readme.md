@@ -51,6 +51,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 ## Data Storage: Azure SQL and Blob Storage
 
 - Track and Record Data Changes using Azure SQL Change Data Capture
+- Materialized View Pattern
 - Azure SQL Change Feed
 - Blob Storage and Claim Check Pattern
 
