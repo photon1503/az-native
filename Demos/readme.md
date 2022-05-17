@@ -52,16 +52,15 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 - Track and Record Data Changes using Azure SQL Change Data Capture
 - Azure SQL Change Feed
-- Using Blob Storage and Claim Check Pattern
+- Blob Storage and Claim Check Pattern
 
 ## Containers - Docker
 
-- Container Basics (Multistage Build, Run, Debug, Publish)
-- Docker Development Workflow    
+- Container Recap (Multistage Build, Run, Debug, Publish to ACR)
+- Docker Development Workflow and Debugging
 - Resiliency and Healt Checks    
 - Managing State in Containers    
 - Configuration Management Options (Env Variables, ConfigMap, Azure App Config Service)
-- Debugging Containers
 
 ## Hosting Microservices on Azure Kubernetes Services
 
@@ -78,10 +77,10 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 - Relational to Schemaless: Designig and Optimizing Schema 
 - Domain-driven design (DDD) 
-- Cosmos DB Indixing and Partitions
-- Cosmos DB Change Feed and Event Sourcing
+- Cosmos DB Partitioning Strategies
 - Understanding the CQRS Pattern
-- Implementing a Product Catalog
+- Cosmos DB Change Feed and Event Sourcing
+- Implementing a Product Catalog 
 - Persisting & Sharing Client State between Frontend Devices
 
 ## Implementing Microservices using Durable Azure Functions
@@ -89,8 +88,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Benefits of Serverless
 - Implementing OData and Open Api Support
 - Durable Functions and Patterns Intro
-- Using Azure Durable Entites
-- Long running processes and background Tasks
+- Using Azure Durable Entites for Long running processes and background Tasks
 - Implementing a Microservice using Azure Durable Functions
 
 ## Designing Asynchronous Event-based Communication using Service Bus and Event Hub
