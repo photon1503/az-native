@@ -103,6 +103,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 - API Management Recap
 - Understanding Gateway Pattern and Backends for Frontends Pattern
+- Api Versions and Revisions
 - Overview API Management Policies (Throtteling, Authentication)
 - Securing Api Access using Managed Identites
 - Using Redis Cache in API Management
