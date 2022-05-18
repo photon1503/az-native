@@ -10,15 +10,19 @@ Last but not least publizieren und sichern wir die App, und deren Microservices 
 
 In allen Phasen wird Authentication und Authorization mittels Microsoft Identity sichergestellt und ein Automatisiertes Deployment der App ist mittels Azure CLI und / oder BICEP gewährleistet.
 
-## Voraussetzungen
+Beispiele werden größtenteils in .NET, Node.js und TypeScript gezeigt. Fallweise können aber auch alternative Technologie Stacks verwendet werden, bzw. wird auf deren Docs verwiesen.
 
-Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntnisse der in AZ-204 vermittelten Programmierkenntnisse 
+## Voraussetzungen und Zielgruppe
+
+Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntnisse und Erfahrung der in AZ-204 vermittelten Kenntnisse erworben haben. Mit RECAP gekennzeichnete Themen sind Kurzzusammenfassungen von AZ-204 Inhalten.
+
+Audience: Azure Developers & Software Architects
 
 ## Themen
 
 - Introduction to Microservices and Event Driven Applications
 - Building Blocks and Architecture Overview
-- Optimizing for Containers
+- Optimizing Services and Frontends for Containers
 - Hosting Microservices on Azure Kubernetes Services
 - Schemaless and Event Optimized Datastorage using Cosmos DB
 - Implementing Microservices using Durable Azure Functions
@@ -48,7 +52,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Access: API Management & Application Gateway
 - Security: Microsoft Identity & Managed Identities
 
-## Optimizing for Containers
+## Optimizing Services and Frontends for Containers
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
