@@ -1,4 +1,4 @@
-# AZ-204: Developing solutions for Microsoft Azure
+# Designing & Implementing Microservices and Event Driven Applications using Microsoft Azure
 
 Companion Material for Class Delivery by [Alexander Pajer](https://www.integrations.at/kontakt.aspx) containing:
 
