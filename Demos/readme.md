@@ -33,7 +33,7 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 - Why Microservices
 - Monolith vs Microservices
 - Why Event Driven Applications
-- Open API & Swagger
+- OpenAPI Specification(OAS) & Swagger
 - Creating Software Architecture Diagrams
 - What are Cloud Architecture Design Patterns
 - The sample Application
