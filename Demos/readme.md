@@ -80,7 +80,8 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 - Benefits of Serverless
 - Implementing OData and Open API Support
-- Durable Functions and Patterns Intro
+- Durable Functions and Patterns
+- Changing Storage Providers in Azure Durable Functions
 - Using Azure Durable Entities for Long running processes and background Tasks
 - Implementing a Microservice using Azure Durable Functions
 
