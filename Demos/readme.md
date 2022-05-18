@@ -109,9 +109,9 @@ Audience: Azure Developers & Software Architects
 ## Managing and Securing API Access using Api Management
 
 - API Management Recap
+- API Management Policies Recap (Throttling, Authentication, ...)
 - Understanding Gateway Pattern and Backends for Frontends Pattern
 - API Versions and Revisions
-- Overview API Management Policies (Throttling, Authentication)
 - Securing API Access using Managed Identities
 - Using Redis Cache in API Management
 
