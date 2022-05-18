@@ -78,12 +78,13 @@ Kursteilnehmer welche die Labs erfolgreich durchführen wollen sollten Kenntniss
 
 ## Implementing Microservices using Durable Azure Functions
 
-- Benefits of Serverless
+- Serverless and Azure Functions Recap
 - Implementing OData and Open API Support
 - Durable Functions and Patterns
 - Changing Storage Providers in Azure Durable Functions
 - Using Azure Durable Entities for Long running processes and background Tasks
 - Implementing a Microservice using Azure Durable Functions
+- Montoring Durable Functions
 
 ## Designing Asynchronous Event-based Communication using Service Bus and Event Hub
 
