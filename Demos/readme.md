@@ -36,10 +36,10 @@ Audience: Azure Developers & Software Architects
 
 - Why Microservices
 - Monolith vs Microservices
-- Why Event Driven Applications
 - OpenAPI Specification(OAS) & Swagger
-- Creating Software Architecture Diagrams
+- Why Event Driven Applications
 - What are Cloud Architecture Design Patterns
+- Creating Software Architecture Diagrams
 - The sample Application
 
 ### Building Blocks and Architecture Overview
@@ -115,9 +115,9 @@ Audience: Azure Developers & Software Architects
 - Securing API Access using Managed Identities
 - Using Redis Cache in API Management
 
-## Managing Traffic using Azure Application Gateway
+## Managing Traffic using Gateways
 
-- Application Gateway Recap
+- Application Gateway vs Api Gateway
 - Automated Deployment of the Sample Application using Azure CLI and BICEP
 - Securing and Publishing the Sample Application using Azure Application Gateway
 
