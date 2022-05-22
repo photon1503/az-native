@@ -26,7 +26,7 @@ Audience: Azure Developers & Software Architects
 - Hosting Microservices on Azure Kubernetes Services
 - Schemaless and Event Optimized Datastorage using Cosmos DB
 - Implementing Microservices using Durable Azure Functions
-- Designing Asynchronous Event-based Communication using Service Bus and Event Hub
+- Designing Asynchronous Event Driven Communication using Service Bus, Event Hub & Event Grid
 - Integrating Azure SQL and Blob Storage with Events
 - Managing and Securing API Access using Api Management
 - Managing Traffic using Azure Application Gateway
@@ -40,17 +40,18 @@ Audience: Azure Developers & Software Architects
 - Why Event Driven Applications
 - What are Cloud Architecture Design Patterns
 - Creating Software Architecture Diagrams
-- The sample Application
+- The Workshop Starter Application and it's proposed Design
 
 ### Building Blocks and Architecture Overview
 
 - Hosting: Containers, Kubernetes and Functions
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
-- Caching: Redis and Client Side Caching
-- Configuration Management: Key Vault, App Config Service
-- Connecting and Events: Service Bus, Event Hub, Event Grid
-- Access: API Management & Application Gateway
-- Security: Microsoft Identity & Managed Identities
+- Caching: Redis and Client Side State using NgRx
+- Configuration Management, Secrets: Key Vault, App Config Service
+- Messaging Brokers: Service Bus, Event Hub, Event Grid
+- Real Time: Azure SignalR Service, Azure Web PubSub
+- Access & Management: API Management & Application Gateway
+- Authentication & Authorization: Microsoft Identity, Azure AD B2C & Managed Identities
 
 ## Optimizing Services and Frontends for Containers
 
@@ -90,9 +91,13 @@ Audience: Azure Developers & Software Architects
 - Implementing a Microservice using Azure Durable Functions
 - Montoring Durable Functions
 
-## Designing Asynchronous Event-based Communication using Service Bus and Event Hub
+## Designing Asynchronous Event Driven Communication using Service Bus, Event Hub & Event Grid
 
-- Service Bus & Event Hub Recap
+- Introduction to Event Driven Architecture
+- Common Message Broker Types in Azure
+- Messages vs Events
+- Pub / Sub vs Event Streaming
+- What to choose when: Service Bus vs Event Hub vs Event Grid
 - Common Cloud Design Patterns used with Even Driven Architecture
 - Deduplication and Transactions
 - Event Sourcing and Integration Events
@@ -109,10 +114,10 @@ Audience: Azure Developers & Software Architects
 ## Managing and Securing API Access using Api Management
 
 - API Management Recap
-- API Management Policies Recap (Throttling, Authentication, ...)
+- API Management Policies Recap (Quotas, Throttling, Mock Response, Retry, ...)
 - Understanding Gateway Pattern and Backends for Frontends Pattern
 - API Versions and Revisions
-- Securing API Access using Managed Identities
+- Securing API Access using Authentication & Managed Identities
 - Using Redis Cache in API Management
 
 ## Managing Traffic using Gateways

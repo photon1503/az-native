@@ -1,5 +1,13 @@
 # Introduction to Microservices and Event Driven Applications
 
+- Why Microservices
+- Monolith vs Microservices
+- OpenAPI Specification(OAS) & Swagger
+- Why Event Driven Applications
+- What are Cloud Architecture Design Patterns
+- Creating Software Architecture Diagrams
+- The sample Application
+
 [Microservices](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices)
 
 [Event-Driven Architecture](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven)
