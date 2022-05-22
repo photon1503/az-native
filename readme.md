@@ -1,5 +1,7 @@
 # Designing & Implementing Microservices and Event Driven Applications using Microsoft Azure
 
+![app](_images/app.png)
+
 Companion Material for Class Delivery by [Alexander Pajer](https://www.integrations.at/kontakt.aspx) containing:
 
   - [Getting Started](./Tooling/00-GettingStarted)

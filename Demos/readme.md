@@ -22,7 +22,7 @@ Audience: Azure Developers & Software Architects
 
 - Introduction to Microservices and Event Driven Applications
 - Building Blocks and Architecture Overview
-- Optimizing Services and Frontends for Containers
+- Optimizing Services and Front Ends for Containers
 - Hosting Microservices on Azure Kubernetes Services
 - Schemaless and Event Optimized Datastorage using Cosmos DB
 - Implementing Microservices using Durable Azure Functions
@@ -53,7 +53,7 @@ Audience: Azure Developers & Software Architects
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity, Azure AD B2C & Managed Identities
 
-## Optimizing Services and Frontends for Containers
+## Optimizing Services and Front Ends for Containers
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
