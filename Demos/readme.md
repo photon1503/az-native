@@ -26,11 +26,11 @@ Audience: Azure Developers & Software Architects
 - Hosting Microservices on Azure Kubernetes Services
 - Schemaless and Event Optimized Datastorage using Cosmos DB
 - Implementing Microservices using Durable Azure Functions
-- Designing Asynchronous Event Driven Communication using Service Bus, Event Hub & Event Grid
+- Designing Event Driven Apps using Service Bus, Event Hub & Event Grid
 - Integrating Azure SQL and Blob Storage with Events
 - Managing and Securing API Access using Api Management
 - Managing Traffic using Azure Application Gateway
-- Connecting Reactive Frontends using Azure Web PubSub
+- Implementing Reactive Frontends using Azure Web PubSub
 
 ### Introduction to Microservices and Event Driven Applications
 
@@ -93,7 +93,7 @@ Audience: Azure Developers & Software Architects
 - Implementing a Microservice using Azure Durable Functions
 - Montoring Durable Functions
 
-## Designing Asynchronous Event Driven Communication using Service Bus, Event Hub & Event Grid
+## Designing Event Driven Apps using Service Bus, Event Hub & Event Grid
 
 - Introduction to Event Driven Architecture
 - Common Message Broker Types in Azure
@@ -129,7 +129,7 @@ Audience: Azure Developers & Software Architects
 - Automated Deployment of the Sample Application using Azure CLI and BICEP
 - Securing and Publishing the Sample Application using Azure Application Gateway
 
-## Connecting Reactive Frontends using Azure Web PubSub
+## Implementing Reactive Frontends using Azure Web PubSub
 
 - Event Grid Recap
 - Real Time Options: SignalR vs Azure Web PubSub
