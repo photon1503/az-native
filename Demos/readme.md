@@ -40,7 +40,7 @@ Audience: Azure Developers & Software Architects
 - Why Event Driven Applications
 - What are Cloud Architecture Design Patterns
 - Creating Software Architecture Diagrams
-- The Workshop Starter Application and it's proposed Design
+- The workshop Application: Current vs Goal
 
 ### Building Blocks and Architecture Overview
 
@@ -85,6 +85,7 @@ Audience: Azure Developers & Software Architects
 
 - Serverless and Azure Functions Recap
 - Implementing OData and Open API Support
+- Running Function Apps Containers
 - Durable Functions and Patterns
 - Changing Storage Providers in Azure Durable Functions
 - Using Azure Durable Entities for Long running processes and background Tasks
@@ -98,6 +99,7 @@ Audience: Azure Developers & Software Architects
 - Messages vs Events
 - Pub / Sub vs Event Streaming
 - What to choose when: Service Bus vs Event Hub vs Event Grid
+- Choosing the Messaging Broker: Features and Use-Cases
 - Common Cloud Design Patterns used with Even Driven Architecture
 - Deduplication and Transactions
 - Event Sourcing and Integration Events
