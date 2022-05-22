@@ -70,6 +70,7 @@ Audience: Azure Developers & Software Architects
 - Understanding and using Sidecar Pattern
 - Debugging with Bridge to Kubernetes
 - Monitoring and App Insights Integration
+- Gateway Aggregation / Gateway Routing Pattern
 
 ## Schemaless and Event Optimized Datastorage using Cosmos DB
 
