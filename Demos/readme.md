@@ -56,11 +56,11 @@ Audience: Azure Developers & Software Architects
 ## Optimizing Services and Front Ends for Containers
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
+- Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
 - Using SQL-Linux in Containers
 - Stateful Containers using Azure Blob Storage
-- Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 
 ## Hosting Microservices on Azure Kubernetes Services
 
@@ -132,9 +132,9 @@ Audience: Azure Developers & Software Architects
 - Automated Deployment of the Sample Application using Azure CLI and BICEP
 - Securing and Publishing the Sample Application using Azure Application Gateway
 
-## Implementing Reactive Frontends using Azure Web PubSub
+## Front End Integration
 
 - Event Grid Recap
 - Gateway Aggregation / Gateway Routing Pattern
 - Real Time Options: SignalR vs Azure Web PubSub
-- Real Time connected UI’s using Azure Functions, Event Grid and Azure Web PubSub
+- Implementing Reactive Real Time Frontends using Event Grid & Azure Web PubSub
