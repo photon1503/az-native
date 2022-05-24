@@ -57,6 +57,8 @@ Audience: Azure Developers & Software Architects
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
+- Using docker-compose.yaml to locally test multiple containers
+- Using SQL-Linux in Containers
 - Stateful Containers using Azure Blob Storage
 - Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 
@@ -70,7 +72,6 @@ Audience: Azure Developers & Software Architects
 - Understanding and using Sidecar Pattern
 - Debugging with Bridge to Kubernetes
 - Monitoring and App Insights Integration
-- Gateway Aggregation / Gateway Routing Pattern
 
 ## Designing Event Driven Apps using Service Bus, Event Hub & Event Grid
 
@@ -81,9 +82,11 @@ Audience: Azure Developers & Software Architects
 - What to choose when: Service Bus vs Event Hub vs Event Grid
 - Choosing the Messaging Broker: Features and Use-Cases
 - Common Cloud Design Patterns used with Even Driven Architecture
-- Deduplication and Transactions
 - Event Sourcing and Integration Events
-- Analysing and Responding to Events using Azure Stream Analytics
+- Publishing & Subcribing Event in Microservices
+- Deduplication and Transactions
+- Refactor Microservices to support Event Based Communication
+- Analysing and Responding to Events using Azure Stream Analytics (optional)
 
 ## Schemaless and Event Optimized Datastorage using Cosmos DB
 
@@ -132,5 +135,6 @@ Audience: Azure Developers & Software Architects
 ## Implementing Reactive Frontends using Azure Web PubSub
 
 - Event Grid Recap
+- Gateway Aggregation / Gateway Routing Pattern
 - Real Time Options: SignalR vs Azure Web PubSub
 - Real Time connected UI’s using Azure Functions, Event Grid and Azure Web PubSub
