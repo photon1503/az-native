@@ -72,6 +72,19 @@ Audience: Azure Developers & Software Architects
 - Monitoring and App Insights Integration
 - Gateway Aggregation / Gateway Routing Pattern
 
+## Designing Event Driven Apps using Service Bus, Event Hub & Event Grid
+
+- Introduction to Event Driven Architecture
+- Common Message Broker Types in Azure
+- Messages vs Events
+- Pub / Sub vs Event Streaming
+- What to choose when: Service Bus vs Event Hub vs Event Grid
+- Choosing the Messaging Broker: Features and Use-Cases
+- Common Cloud Design Patterns used with Even Driven Architecture
+- Deduplication and Transactions
+- Event Sourcing and Integration Events
+- Analysing and Responding to Events using Azure Stream Analytics
+
 ## Schemaless and Event Optimized Datastorage using Cosmos DB
 
 - Relational to Schemaless: Designing and Optimizing Schema 
@@ -92,19 +105,6 @@ Audience: Azure Developers & Software Architects
 - Using Azure Durable Entities for Long running processes and background Tasks
 - Implementing a Microservice using Azure Durable Functions
 - Montoring Durable Functions
-
-## Designing Event Driven Apps using Service Bus, Event Hub & Event Grid
-
-- Introduction to Event Driven Architecture
-- Common Message Broker Types in Azure
-- Messages vs Events
-- Pub / Sub vs Event Streaming
-- What to choose when: Service Bus vs Event Hub vs Event Grid
-- Choosing the Messaging Broker: Features and Use-Cases
-- Common Cloud Design Patterns used with Even Driven Architecture
-- Deduplication and Transactions
-- Event Sourcing and Integration Events
-- Analysing and Responding to Events using Azure Stream Analytics
 
 ## Integrating Azure SQL and Blob Storage with Events
 
