@@ -34,9 +34,9 @@ choco install dotnet-6.0-sdk -y
 choco install git -y
 choco install gitextensions -y
 choco install git-lfs.install -y
-choco install nodejs-lts --version=14.18.0 -y
+choco install nodejs-lts --version=14.15.0 -y
 choco install azure-cli -y
-choco install gh -y
+choco install azurepowershell -y
 choco install curl -y
 choco install python --version=3.9.0
 
@@ -70,9 +70,10 @@ code --install-extension ms-azuretools.vscode-azureterraform
 code --install-extension vs-publisher-1448185.keyoti-changeallendoflinesequence
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension ms-python.python
+code --install-extension alex-pattison.theme-cobalt3
 
-# Azurite Storage Emulator & Function Core Tools v3
-npm install -g azure-functions-core-tools@4 --unsafe-perm true
+# Azurite Storage Emulator & Function Core Tools v4
+npm install -g azure-functions-core-tools@4 --unsafe-perm true --force
 npm install -g azurite
 
 # Install Angular

@@ -35,11 +35,13 @@ Audience: Azure Developers & Software Architects
 ### Introduction to Microservices and Event Driven Applications
 
 - Why Microservices
-- Monolith vs Microservices
 - OpenAPI Specification(OAS) & Swagger
-- Why Event Driven Applications
+- Monolith vs Microservices
 - What are Cloud Architecture Design Patterns
+- Api Gateway Pattern
+- Why Event Driven Applications
 - Creating Software Architecture Diagrams
+- Domain Driven Design and Bounded Context Pattern
 - The workshop Application: Current vs Goal
 
 ### Building Blocks and Architecture Overview
@@ -59,8 +61,9 @@ Audience: Azure Developers & Software Architects
 - Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
-- Using SQL-Linux in Containers
+- Docker Networking & Volumes
 - Stateful Containers using Azure Blob Storage
+- Using SQL-Linux in Containers
 
 ## Hosting Microservices on Azure Kubernetes Services
 
