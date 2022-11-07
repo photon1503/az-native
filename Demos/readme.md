@@ -129,12 +129,6 @@ Audience: Azure Developers & Software Architects
 - Securing API Access using Authentication & Managed Identities
 - Using Redis Cache in API Management
 
-## Managing Traffic using Gateways
-
-- Application Gateway vs Api Gateway
-- Automated Deployment of the Sample Application using Azure CLI and BICEP
-- Securing and Publishing the Sample Application using Azure Application Gateway
-
 ## Front End Integration
 
 - Event Grid Recap
