@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace hello_dapr.Controllers;
+namespace Integrations.HelloDapr;
 
 [ApiController]
 [Route("[controller]")]
