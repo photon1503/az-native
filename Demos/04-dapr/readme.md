@@ -54,7 +54,7 @@ Lauchn `Dapr Attach` Config and filter for the hello-world process.
 
 ![filter-process](_images/filter-process.png)
 
-Install [Tye](https://github.com/dotnet/tye/)
+Install [Tye](https://github.com/dotnet/tye/). Project Tye is an experimental developer tool that makes developing, testing, and deploying microservices and distributed applications easier
 
 ```
 dotnet tool install -g Microsoft.Tye --version "0.11.0-alpha.22111.1"
