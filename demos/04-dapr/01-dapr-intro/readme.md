@@ -1,9 +1,3 @@
-# Distributed Application Runtime - dapr
-
-[Dapr - Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-dapr)
-
-[Tye - Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-tye)
-
 ## Hello Dapr Intro
 
 - Install Dapr CLI

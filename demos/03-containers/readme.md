@@ -1,4 +1,4 @@
-# Optimizing Services and Front Ends for Containers
+# Optimizing Services & Front Ends for Containers
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging

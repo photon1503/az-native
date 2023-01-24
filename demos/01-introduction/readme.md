@@ -1,12 +1,16 @@
 # Introduction to Microservices and Event Driven Applications
 
 - Why Microservices
-- Monolith vs Microservices
 - OpenAPI Specification(OAS) & Swagger
-- Why Event Driven Applications
+- Monolith vs Microservices
 - What are Cloud Architecture Design Patterns
+- Api Gateway Pattern
+- Why Event Driven Applications
 - Creating Software Architecture Diagrams
-- The sample Application
+- Domain Driven Design and Bounded Context Pattern
+- The workshop Application: Current vs Goal
+
+## Links and Resources
 
 [Microservices](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices)
 
@@ -16,7 +20,7 @@
 
 [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
 
-## Tooling
+## Tools and Extensions
 
 [Visio Online](https://www.microsoft.com/de-de/microsoft-365/visio/flowchart-software)
 
