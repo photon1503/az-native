@@ -2,9 +2,9 @@
 
 Das Seminar richtet sich an Azure Entwickler und Software Architects welche einen Überblick über die Kernelemente der Entwicklung und Bereitstelle von Event Driven Applications in Microsoft Azure bekommen wollen. 
 
-Begleitend zu den Theorieteilen der einzelnen Module, gestalten wir eine App bestehend aus klassischem Monolithen mit UI in Microservices (Catalog, State, Payment, Delivery, Purchasing) und Micro Frontends um. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernetes bzw Azure Container Apps (Config Injection, Health Checks, …), sowie effizientes denormalisiertes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server Features wie SQL Change Data Capture. 
+Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, State, Payment, Delivery, Purchasing) und Micro Frontends um. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernetes bzw Azure Container Apps (Secrets, Revisions, Config Injection, Health Checks, Kubernetes Event Driven Auto-Scaling - KEDA), sowie effizientes denormalisiertes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server Features wie SQL Change Data Capture. 
 
-Cosmos DB, sein Change Feed wird dann den Übergang in die Welt der Event Driven Applications darstellen. Teile der Microservices implementieren wir Serverless mit Hilfe von Azure Durable Functions und Nutzen dabei Azure Service Bus aber auch Event Hub & Event Grid. In diesem Abschnitt werden sowohl einige Cloud Design Patterns an Teilen der App implementiert. 
+Cosmos DB, sein Change Feed wird dann den Übergang in die Welt der Event Driven Applications darstellen. Teile der Microservices implementieren wir mit Azure Durable Functions und Nutzen dabei Azure Service Bus aber auch Event Hub & Event Grid. Wir diskutieren anhand der Lösung die unterschiedlichen Hostingansätze (Serverless vs Container) und implementieren die Service to Service Kommunikation sowohl traditionell als auch mit Hilfe von Distributed Application Runtime (Dapr). In diesem Abschnitt werden auch einige Cloud Design Patterns vermittelt und an Teilen der App implementiert. 
 
 Last but not least publizieren und sichern wir die App, und deren Microservices mit API Management und Application Gateway, um dann noch unser Reactive Angular UI mit Client Side (NgRx) State in Echtzeit mittels Azure Web PubSub aktuell zu halten.
 
@@ -80,7 +80,7 @@ Audience: Azure Developers & Software Architects
 - Azure Container Apps vs Kubernetes
 - Deploying a muliti Container App (Ingress, Exgress)
 - Working with Secrets
-- Introduction to KEDA (Kubernetes Event Driven Scaling) 
+- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
 - Working with Revisions
 - Container Apps Autehntication and Authorization using Managed Identities
 - Container Apps Monitoring and Logging (Observability)
@@ -122,7 +122,7 @@ Audience: Azure Developers & Software Architects
 
 - Serverless and Azure Functions Recap
 - Implementing OData and Open API Support
-- Running Function Apps Containers
+- Hosting and Scaling Function Apps in Containers
 - Durable Functions and Patterns
 - Changing Storage Providers in Azure Durable Functions
 - Using Azure Durable Entities for Long running processes and background Tasks
@@ -138,9 +138,9 @@ Audience: Azure Developers & Software Architects
 - Securing API Access using Authentication & Managed Identities
 - Using Redis Cache in API Management
 
-## Micro Frontends
+## Implementing Real Time Micro-Frontends & User Interfaces
 
+- Gateway Aggregation / API Gateway Pattern
 - Event Grid Recap
-- Gateway Aggregation / Gateway Routing Pattern
 - Real Time Options: SignalR vs Azure Web PubSub
 - Implementing Reactive Real Time Frontends using Event Grid & Azure Web PubSub
