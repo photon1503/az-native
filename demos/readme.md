@@ -1,6 +1,6 @@
-# Designing & Implementing Microservices and Event Driven Applications using Microsoft Azure
+# Designing & Implementing Cloud Native Applications using Microsoft Azure
 
-Das Seminar richtet sich an Azure Entwickler und Software Architects welche einen Überblick über die Kernelemente der Entwicklung und Bereitstelle von Event Driven Applications in Microsoft Azure bekommen wollen. 
+Das Seminar richtet sich an Azure Entwickler und Software Architects welche einen Überblick über die Kernelemente der Entwicklung und Bereitstelle von Cloud Native Applications in Microsoft Azure bekommen wollen. 
 
 Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, State, Payment, Delivery, Purchasing) und Micro Frontends um. Dabei besprechen wir im Detail mögliche Refactorings bezüglich Bereitstellung in Kubernetes bzw Azure Container Apps (Secrets, Revisions, Config Injection, Health Checks, Kubernetes Event Driven Auto-Scaling - KEDA), sowie effizientes denormalisiertes Schemadesign für Azure Cosmos DB aber auch Azure SQL Server Features wie SQL Change Data Capture. 
 
@@ -20,7 +20,7 @@ Audience: Azure Developers & Software Architects
 
 ## Themen
 
-- Introduction to Microservices and Event Driven Applications
+- Introduction to Cloud Native Applications
 - Building Blocks & Architecture Overview
 - Optimizing Services & Front Ends for Containers
 - Hosting Microservices on Azure Kubernetes Services
@@ -32,28 +32,27 @@ Audience: Azure Developers & Software Architects
 - Managing and Securing API Access using Api Management
 - Implementing Reactive Micro Frontends using Azure Web PubSub
 
-### Introduction to Microservices and Event Driven Applications
+### Introduction to Cloud Native Applications
 
-- Why Microservices
-- OpenAPI Specification(OAS) & Swagger
-- Monolith vs Microservices
+- What are Cloud Native Applications
+- App Monolith vs Microservices
+- What are Event Driven Applications
 - What are Cloud Architecture Design Patterns
-- Api Gateway Pattern
-- Why Event Driven Applications
 - Creating Software Architecture Diagrams
 - Domain Driven Design and Bounded Context Pattern
+- Api Gateway Pattern
 - The workshop Application: Current vs Goal
 
 ### Building Blocks & Architecture Overview
 
-- Hosting: Containers, Kubernetes and Functions
+- Hosting: Containers, Kubernetes and Functions (Serverless / Containers)
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
 - Caching: Redis and Client Side State using NgRx
 - Configuration Management, Secrets: Key Vault, App Config Service
 - Messaging Brokers: Service Bus, Event Hub, Event Grid
 - Real Time: Azure SignalR Service, Azure Web PubSub
 - Access & Management: API Management & Application Gateway
-- Authentication & Authorization: Microsoft Identity, Azure AD B2C & Managed Identities
+- Authentication & Authorization: Microsoft Identity & Managed Identities
 
 ## Optimizing Services & Front Ends for Containers
 
@@ -61,8 +60,8 @@ Audience: Azure Developers & Software Architects
 - Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
-- Docker Networking & Volumes
-- Stateful Containers using Azure Blob Storage
+- Stateful Containers using Azure Blob Storage and Volume Mounts
+- Understanding and using Sidecar Pattern
 
 ## Hosting Microservices on Azure Kubernetes Services
 
@@ -71,9 +70,7 @@ Audience: Azure Developers & Software Architects
 - Implementing Helm charts
 - Supporting Resilience and Health Checks
 - Kubernetes Routing Methods
-- Understanding and using Sidecar Pattern
 - Debugging with Bridge to Kubernetes
-- Monitoring and App Insights Integration
 
 # Introduction to Azure Container Apps (ACA)
 
@@ -88,6 +85,7 @@ Audience: Azure Developers & Software Architects
 ## Distributed Application Runtime - Dapr
 
 - Introduction to Dapr
+- Dapr Environmanet Setup & Tooling
 - Dapr Architecture
 - Dapr Components
 - Dapr State Management
@@ -104,7 +102,7 @@ Audience: Azure Developers & Software Architects
 - Common Cloud Design Patterns used with Even Driven Architecture
 - Event Sourcing and Integration Events
 - Publishing & Subcribing Event in Microservices
-- Deduplication and Transactions
+- Deduplication and Transactions 
 - Refactor Microservices to support Event Based Communication
 - Debugging Event Driven Applications
 
