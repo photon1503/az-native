@@ -1,6 +1,4 @@
 @url=http://localhost:7071/api/
 
-### 
-
 ### read env variable directly
-GET {{url}}getEnvVariable?paramName=App:Funcapp
+GET {{url}}getEnvVariable?paramName=Func:Title
