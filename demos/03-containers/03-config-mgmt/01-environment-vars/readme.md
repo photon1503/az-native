@@ -38,7 +38,7 @@ CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js
     /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"]
 ```
 
-Add the following line to `index.html` in order to execute env.js:
+Add the following line to `index.html` in order to execute `env.js`:
 
 ```html
 <script src="./assets/env.js" type="text/javascript"></script>
