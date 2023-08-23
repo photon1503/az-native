@@ -12,6 +12,12 @@ Using environment variables in .NET is straight forward. Just pass the env varia
     "Environment": "development",
 ```
 
+Build container:
+
+```bash
+docker build --rm -f dockerfile -t config-api .
+```
+
 Run container with environment variable:
 
 ```bash
@@ -58,3 +64,35 @@ docker run -d --rm -p 5052:80 -e ENV_API_URL="http://localhost:5051" config-ui
 
 ## Containerized Functions
 
+For the ease of the demo local.settings.json is checked in to GitHub:
+
+```json
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "AppConfigConnection": "Endpoint=https://appconfigdemo.azconfig.io;Id=xxxxxx;Secret=xxxxxx",
+        "AppConfigKey": "TestAppConfigKey",
+        "Environment": "development"
+    }
+}
+```
+
+Build the container:
+
+```bash
+docker build --rm -f dockerfile -t func-docker .
+```
+
+Run the container:
+
+```bash
+docker run -d --rm -p 5053:80 -e "Environment=production" func-docker
+```
+
+Test:
+
+```bash
+http://localhost:5053/api/getEnvVariable?paramName=Environment
+```
