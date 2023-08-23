@@ -1,0 +1,1 @@
+# Azure Container Hosts: Azure Container Apps vs Kubernetes

@@ -4,7 +4,7 @@
 
 Remove existing `node_modules` and `.angular` folders in `config-ui`, if present to reduce upload time to Azrue container registry.
 
-Execute `acr-build.azcli` to build and publish to Azure Container Registry.
+Execute `publish-containers.azcli` to build and publish to Azure Container Registry.
 
 ## Docker Development Workflow and Debugging
 
