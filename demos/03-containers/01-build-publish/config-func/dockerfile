@@ -15,6 +15,6 @@ COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
 
 
 # docker build --rm -f dockerfile -t config-func .
-# docker run -d --rm -p 5053:80 -e "Func:Title=devtitle" config-func
+# docker run -d --rm -p 5053:80 -e "Func:Title=LocalDev Title" config-func
 
 # Browse: http://localhost:5053/api/getEnvVariable?paramName=Func:Title
