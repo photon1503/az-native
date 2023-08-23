@@ -82,13 +82,13 @@ For the ease of the demo local.settings.json is checked in to GitHub:
 Build the container:
 
 ```bash
-docker build --rm -f dockerfile -t func-docker .
+docker build --rm -f dockerfile -t config-func .
 ```
 
 Run the container:
 
 ```bash
-docker run -d --rm -p 5053:80 -e "Environment=production" func-docker
+docker run -d --rm -p 5053:80 -e "Environment=production" config-func
 ```
 
 Test:
