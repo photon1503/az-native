@@ -3,4 +3,4 @@
 ### 
 
 ### read env variable directly
-GET {{url}}getEnvVariable?paramName=Environment
+GET {{url}}getEnvVariable?paramName=App:Funcapp
