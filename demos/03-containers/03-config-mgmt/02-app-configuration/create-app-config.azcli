@@ -1,0 +1,18 @@
+env=dev
+grp=az-native-$env
+loc=westeurope
+cfg=native-config-$env-$RANDOM
+app=config-api-$env
+
+az group create -n $grp -l $loc
+
+az appconfig create -n $cfg -g $grp -l $loc --sku free
+
+az appconfig kv set -n $cfg --key "App:Title" --value "Config Api Dev" --label development -y
+az appconfig kv set -n $cfg --key "App:Title" --value "Config Api" --label production  -y
+
+configEP=$(az appconfig list -g $grp --query "[?name=='$cfg'].endpoint" -o tsv)
+configCon=$(az appconfig credential list --name $cfg --query [0].connectionString -o tsv)
+
+echo "Config Endpoint: $configEP"
+echo "Config Connection String: $configCon"

@@ -18,7 +18,7 @@ namespace ConfigApi
 
     public class AppSettings
     {
-        public string AppTitle { get; set; }
+        public string Title { get; set; }
         public bool AuthEnabled { get; set; }
         public bool UseSQLite { get; set; }
         public bool UseAppConfig { get; set; }

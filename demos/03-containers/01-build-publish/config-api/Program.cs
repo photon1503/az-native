@@ -19,11 +19,7 @@ if (cfg.App.UseAppConfig)
 {
     builder.Configuration.AddAzureAppConfiguration(options =>
     {
-        options.Connect(cfg.App.AppConfigConnection)
-        .ConfigureKeyVault(kv =>
-        {
-            kv.SetCredential(new DefaultAzureCredential());
-        })
+        options.Connect(cfg.App.AppConfigConnection)        
         .Select("*", cfg.App.Environment);
     });
 }
@@ -42,7 +38,7 @@ builder.Services.AddCors(o => o.AddPolicy("nocors", builder =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = cfg.App.AppTitle, Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = cfg.App.Title, Version = "v1" });
 });
 
 var app = builder.Build();
@@ -60,7 +56,7 @@ app.UseCors("nocors");
 app.UseSwagger();
 app.UseSwaggerUI(c =>
    {
-       c.SwaggerEndpoint("/swagger/v1/swagger.json", cfg.App.AppTitle);
+       c.SwaggerEndpoint("/swagger/v1/swagger.json", cfg.App.Title);
        c.RoutePrefix = string.Empty;
    }
 );
