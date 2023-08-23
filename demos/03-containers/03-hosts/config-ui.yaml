@@ -1,40 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: configui
+  name: config-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: configui
+      app: config-ui
   template:
     metadata:
       labels:
-        app: configui                 
+        app: config-ui                 
     spec:
       containers:
-      - name: configui
-        image: configacrdev.azurecr.io/config-ui:latest
+      - name: config-ui
+        image: aznativedev.azurecr.io/config-ui:latest
         env: 
           - name: ENV_API_URL
-            value: 'http://20.103.180.102'
+            value: 'http://20.23.115.214'
         imagePullPolicy: Always
         ports:
         - containerPort: 80        
         resources:
           limits:            
-            cpu: "0.2"
+            cpu: "0.4"
             memory: "128Mi" 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: configui-load-balancer
+  name: config-ui-lb
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: configui
+    app: config-ui
 ---  
