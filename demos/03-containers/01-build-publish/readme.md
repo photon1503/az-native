@@ -46,22 +46,21 @@ Update the `docker-build` task in `tasks.json` to use `debug.dockerfile`:
 
 ```json
 {
-        "type": "docker-run",
-        "label": "docker-run: debug",
-        "dependsOn": [
-            "docker-build: debug"
-        ],
-        "dockerRun": {
-            "ports": [{"hostPort": 5050, "containerPort": 80}],
-            "env": {
-                "App__MockSetting":"ChangedMockValue",
-            }
-        },
-        "netCore": {
-            "appProject": "${workspaceFolder}/config-api.csproj",
-            "enableDebugging": true
-        }
+    "type": "docker-build",
+    "label": "docker-build: release",
+    "dependsOn": [
+        "build"
+    ],
+    "dockerBuild": {
+        "tag": "config-api:latest",
+        "dockerfile": "${workspaceFolder}/debug.dockerfile",
+        "context": "${workspaceFolder}",
+        "pull": true
     },
+    "netCore": {
+        "appProject": "${workspaceFolder}/config-api.csproj"
+    }
+}
 ```
 
 For container debugging customize `docker-run: debug` in `.vscode/tasks.json`. Add a mock environment variable:
@@ -76,7 +75,7 @@ For container debugging customize `docker-run: debug` in `.vscode/tasks.json`. A
     "dockerRun": {
         "ports": [{"hostPort": 5050, "containerPort": 80}],
         "env": {
-            "App__MockSetting":"ChangedMockValue",
+            "App__Environment":"staging"
         }
     },
     "netCore": {
