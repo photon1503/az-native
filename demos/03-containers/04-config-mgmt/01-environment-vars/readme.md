@@ -73,7 +73,7 @@ For the ease of the demo local.settings.json is checked in to GitHub:
         "AzureWebJobsStorage": "UseDevelopmentStorage=true",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
         "AppConfigConnection": "Endpoint=https://appconfigdemo.azconfig.io;Id=xxxxxx;Secret=xxxxxx",
-        "AppConfigKey": "TestAppConfigKey",
+        "Func:Title": "Default Title",
         "Environment": "development"
     }
 }
@@ -88,11 +88,11 @@ docker build --rm -f dockerfile -t config-func .
 Run the container:
 
 ```bash
-docker run -d --rm -p 5053:80 -e "Environment=production" config-func
+docker run -d --rm -p 5053:80 -e "Func:Title=devtitle" config-func
 ```
 
-Test:
+Browse to the following URL:
 
 ```bash
-http://localhost:5053/api/getEnvVariable?paramName=Environment
+http://localhost:5053/api/getEnvVariable?paramName=Func:Title
 ```
