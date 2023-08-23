@@ -79,7 +79,7 @@
             "dockerRun": {
                 "ports": [{"hostPort": 5050, "containerPort": 80}],
                 "env": {
-                    "App__MockSetting":"ChangedMockValue",
+                    "App__Environment":"staging",
                 }
             },
             "netCore": {

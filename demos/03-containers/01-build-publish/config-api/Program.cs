@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Azure.Identity;
 
 // Configure Services
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,19 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 IConfiguration Configuration = builder.Configuration;
 builder.Services.AddSingleton(Configuration);
 var cfg = Configuration.Get<AppConfig>();
+
+if (cfg.App.UseAppConfig)
+{
+    builder.Configuration.AddAzureAppConfiguration(options =>
+    {
+        options.Connect(cfg.App.AppConfigConnection)
+        .ConfigureKeyVault(kv =>
+        {
+            kv.SetCredential(new DefaultAzureCredential());
+        })
+        .Select("*", cfg.App.Environment);
+    });
+}
 
 builder.Services.AddControllers();
 builder.Services.AddCors(o => o.AddPolicy("nocors", builder =>

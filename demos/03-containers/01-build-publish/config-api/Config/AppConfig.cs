@@ -22,7 +22,8 @@ namespace ConfigApi
         public bool AuthEnabled { get; set; }
         public bool UseSQLite { get; set; }
         public bool UseAppConfig { get; set; }
-        public string MockSetting { get; set; }
+        public string AppConfigConnection { get; set; }
+        public string Environment { get; set; }
         public ConnectionStrings ConnectionStrings { get; set; }
     }
     

@@ -68,6 +68,16 @@ Audience: Azure Developers & Software Architects
 - Understanding and using Sidecar Pattern
 - Azure Container Hosts: Azure Container Apps vs Kubernetes
 
+# Introduction to Azure Container Apps (ACA)
+
+- What is Azure Container Apps
+- Deploying a muliti-container App (Ingress, Exgress)
+- Working with Secrets
+- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
+- Working with Revisions
+- Container Apps Authentication and Authorization using Managed Identities
+- Container Apps Monitoring and Logging (Observability)
+
 ## Schemaless and Event Optimized Data storage using Cosmos DB
 
 - Cosmos DB Partitioning Strategies
@@ -89,15 +99,7 @@ Audience: Azure Developers & Software Architects
 - Implementing a Saga Pattern using Durable Functions
 - Changing Storage Providers in Azure Durable Functions
 
-# Introduction to Azure Container Apps (ACA)
 
-- What is Azure Container Apps
-- Deploying a muliti-container App (Ingress, Exgress)
-- Working with Secrets
-- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
-- Working with Revisions
-- Container Apps Authentication and Authorization using Managed Identities
-- Container Apps Monitoring and Logging (Observability)
 
 ## Connecting Microservices using Distributed Application Runtime - Dapr
 

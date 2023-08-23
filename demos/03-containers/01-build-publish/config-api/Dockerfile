@@ -17,7 +17,7 @@ ENTRYPOINT ["dotnet", "config-api.dll"]
 
 # Run Image without env vars
 # docker run -it --rm -p 5051:80 config-api
-# docker run -it --rm -p 5051:80 config-api -e "App:MockSetting=ChangedMockValue" 
+# docker run -it --rm -p 5051:80 config-api -e "App:Environment=production" 
 
 # Browse using: 
 # http://localhost:5051/
