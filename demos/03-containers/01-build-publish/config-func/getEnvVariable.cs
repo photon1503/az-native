@@ -3,16 +3,19 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace Integrations
 {
     public class getEnvVariable
     {
         private readonly ILogger _logger;
+        private readonly IConfiguration _configuration;
 
-        public getEnvVariable(ILoggerFactory loggerFactory)
+        public getEnvVariable(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             _logger = loggerFactory.CreateLogger<getEnvVariable>();
+            _configuration = configuration;
         }
 
         [Function("getEnvVariable")]
@@ -26,7 +29,7 @@ namespace Integrations
             var queryDictionary = QueryHelpers.ParseQuery(req.Url.Query);
             if(queryDictionary["paramName"].Count > 0){
                 var param = queryDictionary["paramName"][0];
-                var value = Environment.GetEnvironmentVariable(param);
+                var value = _configuration[param];
                 response.WriteString($"{param} has the following Value: {value}");
             }            
             
