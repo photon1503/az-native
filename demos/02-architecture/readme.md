@@ -10,6 +10,8 @@
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity & Managed Identities
 
+    ![food-app](/_images/app.png)
+
 ## Links and Resources
 
 [Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/browse/)
