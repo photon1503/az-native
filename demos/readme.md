@@ -94,8 +94,8 @@ Audience: Azure Developers & Software Architects
 
 ## NoSQL Data storage using Cosmos DB
 
-- From Relational to Schemaless: Does and Don'ts
-- Implementing Domain Driven Design for microservices
+- From Relational to NoSQL: Does and Don'ts
+- Domain Driven Design
 - Cosmos DB Change Feed and Event Sourcing
 - Optimize Partitioning & Performance
 - Understanding the CQRS Pattern
