@@ -100,15 +100,6 @@ Audience: Azure Developers & Software Architects
 - Cosmos DB Change Feed and Event Sourcing
 - Understanding and implementing the CQRS Pattern
 
-## Connecting Microservices using Distributed Application Runtime - Dapr
-
-- Introduction to Dapr
-- Dapr Environment Setup & Tooling
-- Understanding Dapr Architecture
-- Understanding Dapr Pub/Sub
-- Using Dapr Components to interact with Azure Services
-- Enhance Performance using Dapr State Management
-
 ## Designing & Implementing Event Driven Apps
 
 - Introduction to Event Driven Architecture
@@ -125,6 +116,15 @@ Audience: Azure Developers & Software Architects
 - Refactor Microservices to support Event Based Communication
 - Debugging Event Driven Applications
 
+## Connecting Microservices using Distributed Application Runtime - Dapr
+
+- Introduction to Dapr
+- Dapr Environment Setup & Tooling
+- Understanding Dapr Architecture
+- Understanding Dapr Pub/Sub
+- Using Dapr Components to interact with Azure Services
+- Enhance Performance using Dapr State Management
+
 ## Optimizing and Securing API Access using Api Management
 
 - API Management (APIM) Recap
@@ -133,8 +133,6 @@ Audience: Azure Developers & Software Architects
 - API Versions and Revisions
 - Securing API Access using Authentication & Managed Identities- 
 - Using Redis Cache in API Management
-- Intro to GraphQL and Use Cases
-- Introduction to APIM Synthetic GraphQL
 
 ## Implementing Real Time Micro-Frontends & User Interfaces
 
