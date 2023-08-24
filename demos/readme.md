@@ -88,7 +88,6 @@ Audience: Azure Developers & Software Architects
 - Monitoring Durable Functions
 - Implementing a Microservice using Azure Durable Functions
 - Implementing a Saga Pattern using Durable Functions
-- Changing Storage Providers in Azure Durable Functions
 - Azure Durable Entities & Actors
 
 ## NoSQL Data storage using Cosmos DB
