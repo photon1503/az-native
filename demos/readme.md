@@ -60,7 +60,7 @@ Audience: Azure Developers & Software Architects
 - Authentication & Authorization: Microsoft Identity & Managed Identities
 - Provisioning base Ressources using Azure CLI & Bicep
 
-## Container Essentials & Configuration Management
+### Container Essentials & Configuration Management
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
@@ -69,7 +69,7 @@ Audience: Azure Developers & Software Architects
 - Stateful Containers using Azure Blob Storage and Volume Mounts
 - Understanding and using Sidecar Pattern
 
-## Introduction to Azure Container Apps (ACA)
+### Introduction to Azure Container Apps (ACA)
 
 - What is Azure Container Apps
 - Azure Container Hosts: Azure Container Apps vs Kubernetes
@@ -80,7 +80,7 @@ Audience: Azure Developers & Software Architects
 - Container Apps Authentication and Authorization using Managed Identities
 - Health Probes, Monitoring, Logging & Observability
 
-## Implementing Microservices using Azure Functions
+### Implementing Microservices using Azure Functions
 
 - Implementing OData and Open API Support
 - Hosting: Serverless vs Containers
@@ -91,7 +91,7 @@ Audience: Azure Developers & Software Architects
 - Implementing a Saga Pattern using Durable Functions
 - Azure Durable Entities & Actors
 
-## NoSQL Data storage using Cosmos DB
+### NoSQL Data storage using Cosmos DB
 
 - From Relational to NoSQL: Does and Don'ts
 - Domain Driven Design
@@ -100,7 +100,7 @@ Audience: Azure Developers & Software Architects
 - Cosmos DB Change Feed and Event Sourcing
 - Understanding the CQRS Pattern
 
-## Designing & Implementing Event Driven Apps
+### Designing & Implementing Event Driven Apps
 
 - Introduction to Event Driven Architecture
 - Common Message Broker Types in Azure
@@ -116,7 +116,7 @@ Audience: Azure Developers & Software Architects
 - Refactor Microservices to support Event Based Communication
 - Debugging Event Driven Applications
 
-## Connecting Microservices using Distributed Application Runtime - Dapr
+### Connecting Microservices using Distributed Application Runtime - Dapr
 
 - Introduction to Dapr
 - Dapr Environment Setup & Tooling
@@ -125,14 +125,14 @@ Audience: Azure Developers & Software Architects
 - Using Dapr Components to interact with Azure Services
 - Enhance Performance using Dapr State Management
 
-## Optimizing and Securing API Access using Api Management
+### Optimizing and Securing API Access using Api Management
 
 - API Management (APIM) Recap
 - Understanding Gateway Pattern and Backends for Frontends Pattern
 - API Versions and Revisions
 - Securing API Access using Authentication & Managed Identities
 
-## Implementing Real Time Micro-Frontends 
+### Implementing Real Time Micro-Frontends 
 
 - Event Grid Recap
 - Real Time Options: SignalR vs Azure Web PubSub
