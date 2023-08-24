@@ -79,14 +79,6 @@ Audience: Azure Developers & Software Architects
 - Container Apps Authentication and Authorization using Managed Identities
 - Health Probes, Monitoring, Logging & Observability
 
-## Schemaless and Event Optimized Data storage using Cosmos DB
-
-- Cosmos DB Partitioning Strategies
-- From Relational to Schemaless: Does and Don'ts
-- Implementing Domain Driven Design for microservices
-- Cosmos DB Change Feed and Event Sourcing
-- Understanding and implementing the CQRS Pattern
-
 ## Implementing Microservices using Durable Azure Functions
 
 - Serverless and Azure Functions Recap
@@ -100,7 +92,13 @@ Audience: Azure Developers & Software Architects
 - Implementing a Saga Pattern using Durable Functions
 - Changing Storage Providers in Azure Durable Functions
 
+## Schemaless and Event Optimized Data storage using Cosmos DB
 
+- Cosmos DB Partitioning Strategies
+- From Relational to Schemaless: Does and Don'ts
+- Implementing Domain Driven Design for microservices
+- Cosmos DB Change Feed and Event Sourcing
+- Understanding and implementing the CQRS Pattern
 
 ## Connecting Microservices using Distributed Application Runtime - Dapr
 
