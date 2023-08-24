@@ -96,8 +96,9 @@ Audience: Azure Developers & Software Architects
 
 - From Relational to NoSQL: Does and Don'ts
 - Domain Driven Design
-- Cosmos DB Change Feed and Event Sourcing
 - Optimize Partitioning & Performance
+- Using SDKs and Entity Framework
+- Cosmos DB Change Feed and Event Sourcing
 - Understanding the CQRS Pattern
 
 ## Designing & Implementing Event Driven Apps
