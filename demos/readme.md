@@ -47,7 +47,7 @@ Audience: Azure Developers & Software Architects
 - Api Gateway Pattern, Frontend Aggregation Pattern
 - What are Event Driven Applications
 
-### Recap: Building Blocks & Architecture Overview
+### Building Blocks & Architecture Overview
 
 - Food App - food ordering and delivery application
 - Creating Software Architecture Diagrams
@@ -58,6 +58,7 @@ Audience: Azure Developers & Software Architects
 - Real Time: Azure SignalR Service, Azure Web PubSub
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity & Managed Identities
+- Provisioning base Ressources using Azure CLI & Bicep
 
 ## Container Essentials & Configuration Management
 
