@@ -98,7 +98,7 @@ Audience: Azure Developers & Software Architects
 - From Relational to Schemaless: Does and Don'ts
 - Implementing Domain Driven Design for microservices
 - Cosmos DB Change Feed and Event Sourcing
-- Understanding and implementing the CQRS Pattern
+- Understanding the CQRS Pattern
 
 ## Designing & Implementing Event Driven Apps
 
