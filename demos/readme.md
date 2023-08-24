@@ -75,7 +75,7 @@ Audience: Azure Developers & Software Architects
 - Deploying a muliti-container App (Ingress, Exgress)
 - Working with Secrets
 - Working with Revisions
-- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
+- Introduction to Kubernetes Event Driven Auto-Scaling - KEDA
 - Container Apps Authentication and Authorization using Managed Identities
 - Health Probes, Monitoring, Logging & Observability
 
