@@ -68,7 +68,7 @@ Audience: Azure Developers & Software Architects
 - Stateful Containers using Azure Blob Storage and Volume Mounts
 - Understanding and using Sidecar Pattern
 
-# Introduction to Azure Container Apps (ACA)
+## Introduction to Azure Container Apps (ACA)
 
 - What is Azure Container Apps
 - Azure Container Hosts: Azure Container Apps vs Kubernetes
