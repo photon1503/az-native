@@ -2,7 +2,7 @@
 
 Das Seminar richtet sich an Azure Entwickler und Software Architects, welche einen Überblick über die Kernelemente der Entwicklung und bereitstelle von Cloud Native Applications in Microsoft Azure bekommen wollen. 
 
-Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, State, Payment, Delivery, Purchasing) und Micro Frontends um. Dabei legen wir Wert auf die Verwendung von Best Practices und Cloud Design Patterns, sowie deren Abbildung mit Software Architektur Diagrammen.
+Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, Shop, State, Payment, Delivery) und Micro Frontends. Dabei legen wir Wert auf die Verwendung von Best Practices und Cloud Design Patterns, sowie deren Abbildung mit Software Architektur Diagrammen.
 
 Wir vermitteln die Container Essentials, und Konzepte wie Stateful Containers oder SideCar Pattern und besprechen im Detail mögliche Refactorings bezüglich Bereitstellung in den Kubernetes basierenden Azure Container Apps und behandeln dabei Themen wie Secrets, Revisions, Config Injection, Health Checks, Kubernetes Event Driven Auto-Scaling - KEDA.
 
@@ -12,7 +12,7 @@ Wir vermitteln die Grundlagen von Event Driven Applications, deren Transaktionsm
 
 Wir nutzen Durable Functions, um Microservices zu implementieren, welche wahlweise Serverless aber auch also Container gehostet werden können. Im Speziellen gehen wir hier auf die Themen Durable Entities, Durable Monitoring und Durable Saga Pattern ein.
 
-Last but not least publizieren und sichern wir die App, und deren Microservices mit API Management und Application Gateway, um dann noch unser Reactive Angular UI mit Client Side State in Echtzeit mittels Azure Web PubSub aktuell zu halten.
+Last but not least publizieren und sichern wir die App, und deren Microservices mit API Management und Application Gateway, um dann noch unser Reactive Angular  UI mit Client Side State in Echtzeit mittels Azure Web PubSub aktuell zu halten.
 
 In allen Phasen wird Authentication und Authorization mittels Microsoft Identity sichergestellt und ein automatisiertes Deployment der App ist mittels Azure CLI und / oder BICEP gewährleistet.
 
