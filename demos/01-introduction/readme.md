@@ -1,4 +1,4 @@
-# Introduction to Microservices and Event Driven Applications
+# Introduction to Cloud Native Applications
 
 - What are Cloud Native Applications
 - App Monolith vs Microservices
@@ -7,7 +7,6 @@
 - Api Gateway Pattern, Frontend Aggregation Pattern
 - What are Event Driven Applications
 - What are Cloud Architecture Design Patterns
-- Creating Software Architecture Diagrams
 
 ## Links and Resources
 
