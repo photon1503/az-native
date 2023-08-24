@@ -42,14 +42,15 @@ Audience: Azure Developers & Software Architects
 - What are Cloud Native Applications
 - App Monolith vs Microservices
 - Domain Driven Design (DDD) and Bounded Context Pattern
+- What are Cloud Architecture Design Patterns
 - Microservices Communication Patterns (Sync, Async, Event Driven)
 - Api Gateway Pattern, Frontend Aggregation Pattern
 - What are Event Driven Applications
-- What are Cloud Architecture Design Patterns
-- Creating Software Architecture Diagrams
 
 ### Recap: Building Blocks & Architecture Overview
 
+- Food App - a food ordering and delivery application
+- Creating Software Architecture Diagrams
 - Hosting: Containers, Kubernetes and Functions (Serverless / Containers)
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
 - Configuration Management, Secrets: Key Vault, App Config Service
