@@ -50,7 +50,6 @@ Audience: Azure Developers & Software Architects
 ### Building Blocks & Architecture Overview
 
 - Food App - food ordering and delivery application
-- Creating Software Architecture Diagrams
 - Hosting: Containers, Kubernetes and Functions (Serverless / Containers)
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
 - Configuration Management, Secrets: Key Vault, App Config Service
