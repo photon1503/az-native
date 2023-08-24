@@ -64,7 +64,6 @@ Audience: Azure Developers & Software Architects
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
-- Azure Container Hosts: Azure Container Apps vs Kubernetes
 - Configuration Management (Env Variables, ConfigMaps, Azure App Config Service)
 - Stateful Containers using Azure Blob Storage and Volume Mounts
 - Understanding and using Sidecar Pattern
@@ -72,12 +71,13 @@ Audience: Azure Developers & Software Architects
 # Introduction to Azure Container Apps (ACA)
 
 - What is Azure Container Apps
+- Azure Container Hosts: Azure Container Apps vs Kubernetes
 - Deploying a muliti-container App (Ingress, Exgress)
 - Working with Secrets
-- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
 - Working with Revisions
+- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
 - Container Apps Authentication and Authorization using Managed Identities
-- Container Apps Monitoring and Logging (Observability)
+- Health Probes, Monitoring, Logging & Observability
 
 ## Schemaless and Event Optimized Data storage using Cosmos DB
 
