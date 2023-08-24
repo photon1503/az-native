@@ -92,12 +92,12 @@ Audience: Azure Developers & Software Architects
 - Changing Storage Providers in Azure Durable Functions
 - Azure Durable Entities & Actors
 
-## Schemaless and Event Optimized Data storage using Cosmos DB
+## NoSQL Data storage using Cosmos DB
 
-- Cosmos DB Partitioning Strategies
 - From Relational to Schemaless: Does and Don'ts
 - Implementing Domain Driven Design for microservices
 - Cosmos DB Change Feed and Event Sourcing
+- Optimize Partitioning & Performance
 - Understanding the CQRS Pattern
 
 ## Designing & Implementing Event Driven Apps
