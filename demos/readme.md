@@ -81,9 +81,8 @@ Audience: Azure Developers & Software Architects
 
 ## Implementing Microservices using Azure Functions
 
-- Serverless and Azure Functions Recap
-- Hosting: Serverless vs Containers
 - Implementing OData and Open API Support
+- Hosting: Serverless vs Containers
 - Hosting and Scaling Function Apps in Containers
 - Durable Functions and Patterns
 - Monitoring Durable Functions
