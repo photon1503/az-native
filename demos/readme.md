@@ -59,15 +59,15 @@ Audience: Azure Developers & Software Architects
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity & Managed Identities
 
-## Container Essentials & Patterns
+## Container Essentials & Configuration Management
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
-- Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
+- Azure Container Hosts: Azure Container Apps vs Kubernetes
+- Configuration Management (Env Variables, ConfigMaps, Azure App Config Service)
 - Stateful Containers using Azure Blob Storage and Volume Mounts
 - Understanding and using Sidecar Pattern
-- Azure Container Hosts: Azure Container Apps vs Kubernetes
 
 # Introduction to Azure Container Apps (ACA)
 

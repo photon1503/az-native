@@ -1,4 +1,4 @@
-# Optimizing Services & Front Ends for Containers
+# Container Essentials & Configuration Management
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
 - Docker Development Workflow and Debugging
