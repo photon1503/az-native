@@ -130,10 +130,9 @@ Audience: Azure Developers & Software Architects
 - API Management (APIM) Recap
 - Understanding Gateway Pattern and Backends for Frontends Pattern
 - API Versions and Revisions
-- Securing API Access using Authentication & Managed Identities- 
-- Using Redis Cache in API Management
+- Securing API Access using Authentication & Managed Identities
 
-## Implementing Real Time Micro-Frontends & User Interfaces
+## Implementing Real Time Micro-Frontends 
 
 - Event Grid Recap
 - Real Time Options: SignalR vs Azure Web PubSub
