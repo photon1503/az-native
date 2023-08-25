@@ -2,7 +2,7 @@
 
 Das Seminar richtet sich an Azure Entwickler und Software Architects, welche einen Überblick über die Kernelemente der Entwicklung und bereitstelle von Cloud Native Applications in Microsoft Azure bekommen wollen. 
 
-Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, State, Payment, Delivery, Purchasing) und Micro Frontends um. Dabei legen wir Wert auf die Verwendung von Best Practices und Cloud Design Patterns, sowie deren Abbildung mit Software Architektur Diagrammen.
+Begleitend zu den Theorieteilen der einzelnen Module, modernisieren wir eine App bestehend aus klassischem Monolithen mit UI in eine Cloud Native App mit Microservices (Catalog, Shop, State, Payment, Delivery) und Micro Frontends. Dabei legen wir Wert auf die Verwendung von Best Practices und Cloud Design Patterns, sowie deren Abbildung mit Software Architektur Diagrammen.
 
 Wir vermitteln die Container Essentials, und Konzepte wie Stateful Containers oder SideCar Pattern und besprechen im Detail mögliche Refactorings bezüglich Bereitstellung in den Kubernetes basierenden Azure Container Apps und behandeln dabei Themen wie Secrets, Revisions, Config Injection, Health Checks, Kubernetes Event Driven Auto-Scaling - KEDA.
 
@@ -12,7 +12,7 @@ Wir vermitteln die Grundlagen von Event Driven Applications, deren Transaktionsm
 
 Wir nutzen Durable Functions, um Microservices zu implementieren, welche wahlweise Serverless aber auch also Container gehostet werden können. Im Speziellen gehen wir hier auf die Themen Durable Entities, Durable Monitoring und Durable Saga Pattern ein.
 
-Last but not least publizieren und sichern wir die App, und deren Microservices mit API Management und Application Gateway, um dann noch unser Reactive Angular UI mit Client Side State in Echtzeit mittels Azure Web PubSub aktuell zu halten.
+Last but not least publizieren und sichern wir die App, und deren Microservices mit API Management und Application Gateway, um dann noch unser Reactive Angular  UI mit Client Side State in Echtzeit mittels Azure Web PubSub aktuell zu halten.
 
 In allen Phasen wird Authentication und Authorization mittels Microsoft Identity sichergestellt und ein automatisiertes Deployment der App ist mittels Azure CLI und / oder BICEP gewährleistet.
 
@@ -42,14 +42,14 @@ Audience: Azure Developers & Software Architects
 - What are Cloud Native Applications
 - App Monolith vs Microservices
 - Domain Driven Design (DDD) and Bounded Context Pattern
+- What are Cloud Architecture Design Patterns
 - Microservices Communication Patterns (Sync, Async, Event Driven)
 - Api Gateway Pattern, Frontend Aggregation Pattern
 - What are Event Driven Applications
-- What are Cloud Architecture Design Patterns
-- Creating Software Architecture Diagrams
 
-### Recap: Building Blocks & Architecture Overview
+### Building Blocks & Architecture Overview
 
+- Food App - food ordering and delivery application
 - Hosting: Containers, Kubernetes and Functions (Serverless / Containers)
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
 - Configuration Management, Secrets: Key Vault, App Config Service
@@ -57,51 +57,61 @@ Audience: Azure Developers & Software Architects
 - Real Time: Azure SignalR Service, Azure Web PubSub
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity & Managed Identities
+- Provisioning base Ressources using Azure CLI & Bicep
 
-## Container Essentials & Patterns
+### Container Essentials & Configuration Management
 
 - Container Recap (Multistage Build, Run, Debug, Publish to ACR)
-- Configuration Management Options (Env Variables, ConfigMaps, Azure App Config Service)
 - Docker Development Workflow and Debugging
 - Using docker-compose.yaml to locally test multiple containers
+- Configuration Management using Environment Variables, Secrets and Azure App Config Service
 - Stateful Containers using Azure Blob Storage and Volume Mounts
 - Understanding and using Sidecar Pattern
-- Azure Container Hosts: Azure Container Apps vs Kubernetes
 
-# Introduction to Azure Container Apps (ACA)
+### Introduction to Azure Container Apps (ACA)
 
 - What is Azure Container Apps
+- Azure Container Hosts: Azure Container Apps vs Kubernetes
 - Deploying a muliti-container App (Ingress, Exgress)
 - Working with Secrets
-- Introduction to KEDA (Kubernetes Event Driven Auto-Scaling) 
 - Working with Revisions
+- Introduction to Kubernetes Event Driven Auto-Scaling - KEDA
 - Container Apps Authentication and Authorization using Managed Identities
-- Container Apps Monitoring and Logging (Observability)
+- Health Probes, Monitoring, Logging & Observability
 
-## Schemaless and Event Optimized Data storage using Cosmos DB
+### Implementing Microservices using Azure Functions
 
-- Cosmos DB Partitioning Strategies
-- From Relational to Schemaless: Does and Don'ts
-- Implementing Domain Driven Design for microservices
-- Cosmos DB Change Feed and Event Sourcing
-- Understanding and implementing the CQRS Pattern
-
-## Implementing Microservices using Durable Azure Functions
-
-- Serverless and Azure Functions Recap
-- Hosting: Serverless vs Containers
 - Implementing OData and Open API Support
+- Hosting: Serverless vs Containers
 - Hosting and Scaling Function Apps in Containers
 - Durable Functions and Patterns
-- Using Azure Durable Entities for Long running processes and background Tasks
 - Monitoring Durable Functions
-- Implementing a Microservice using Azure Durable Functions
+- Azure Durable Entities & Actors
+
+### NoSQL Data storage using Cosmos DB
+
+- From Relational to NoSQL: Does and Don'ts
+- Domain Driven Design
+- Optimize Partitioning & Performance
+- Using SDKs and Entity Framework
+- Cosmos DB Change Feed and Event Sourcing
+- Understanding the CQRS Pattern
+
+### Designing & Implementing Event Driven Apps
+
+- Introduction to Event Driven Architecture
+- Messages vs Events
+- Message Patterns: Queues vs Topics (Pub/Sub)
+- Common Message Broker Types in Azure
+- Choosing the Messaging Broker: Features and Use-Cases
+- Common Cloud Design Patterns used with Even Driven Architecture
+- Event Sourcing and Integration Events
+- Publishing & Subscribing Events in Microservices
 - Implementing a Saga Pattern using Durable Functions
-- Changing Storage Providers in Azure Durable Functions
+- Orchestration vs Choreography
+- Debugging Event Driven Applications
 
-
-
-## Connecting Microservices using Distributed Application Runtime - Dapr
+### Connecting Microservices using Distributed Application Runtime - Dapr
 
 - Introduction to Dapr
 - Dapr Environment Setup & Tooling
@@ -110,37 +120,16 @@ Audience: Azure Developers & Software Architects
 - Using Dapr Components to interact with Azure Services
 - Enhance Performance using Dapr State Management
 
-## Designing & Implementing Event Driven Apps
-
-- Introduction to Event Driven Architecture
-- Common Message Broker Types in Azure
-- Messages vs Events
-- Message Patterns: Queues vs Topics (Pub/Sub)
-- What to choose when: Service Bus vs Event Hub vs Event Grid
-- Choosing the Messaging Broker: Features and Use-Cases
-- Common Cloud Design Patterns used with Even Driven Architecture
-- Event Sourcing and Integration Events
-- Publishing & Subscribing Event in Microservices
-- Implementing Transactions using the Saga Pattern
-- Orchestration vs Choreography
-- Refactor Microservices to support Event Based Communication
-- Debugging Event Driven Applications
-
-## Optimizing and Securing API Access using Api Management
+### Optimizing and Securing API Access using Api Management
 
 - API Management (APIM) Recap
-- APIM Policies Recap (Quotas, Throttling, Mock Response, Retry, ...)
 - Understanding Gateway Pattern and Backends for Frontends Pattern
 - API Versions and Revisions
-- Securing API Access using Authentication & Managed Identities- 
-- Using Redis Cache in API Management
-- Intro to GraphQL and Use Cases
-- Introduction to APIM Synthetic GraphQL
+- Securing API Access using Authentication & Managed Identities
 
-## Implementing Real Time Micro-Frontends & User Interfaces
+### Implementing Real Time Micro-Frontends 
 
-- Event Grid Recap
-- Real Time Options: SignalR vs Azure Web PubSub
 - Introduction to Micro Frontends
+- Real Time Options: SignalR vs Azure Web PubSub
 - Implementing Reactive Real Time Frontends using Event Grid & Azure Web PubSub
 - Implementing a Micro Frontend as Teams App.
