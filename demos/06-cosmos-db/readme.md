@@ -1,7 +1,8 @@
-# Schemaless and Event Optimized Data storage using Cosmos DB
+# NoSQL Data storage using Cosmos DB
 
-- Cosmos DB Partitioning Strategies
-- From Relational to Schemaless: Does and Don'ts
-- Implementing Domain Driven Design for microservices
+- From Relational to NoSQL: Does and Don'ts
+- Domain Driven Design
+- Optimize Partitioning & Performance
+- Using SDKs and Entity Framework
 - Cosmos DB Change Feed and Event Sourcing
-- Understanding and implementing the CQRS Pattern
+- Understanding the CQRS Pattern

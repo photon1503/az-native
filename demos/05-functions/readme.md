@@ -5,6 +5,4 @@
 - Hosting and Scaling Function Apps in Containers
 - Durable Functions and Patterns
 - Monitoring Durable Functions
-- Implementing a Microservice using Azure Durable Functions
-- Implementing a Saga Pattern using Durable Functions
 - Azure Durable Entities & Actors
