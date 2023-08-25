@@ -1,6 +1,5 @@
 # Building Blocks & Architecture Overview
 
-- Food App - a food ordering and delivery application
 - Creating Software Architecture Diagrams
 - Hosting: Containers, Kubernetes and Functions (Serverless / Containers)
 - Storage: Azure Cosmos DB, Azure SQL, Blob Storage
@@ -9,6 +8,8 @@
 - Real Time: Azure SignalR Service, Azure Web PubSub
 - Access & Management: API Management & Application Gateway
 - Authentication & Authorization: Microsoft Identity & Managed Identities
+
+## Food App - A food delivery application
 
 ![food-app](/_images/app.png)
 
