@@ -1,3 +1,10 @@
+# food-catalog-api
+
+[food-catalog-api](/app/food-catalog-api/) provides a REST API to manage a food catalog.
+
+`appsettings.json`:
+
+```json
 {
     "Azure": {    
         "KeyVault": "https://foodvault-dev.vault.azure.net/",
@@ -21,7 +28,7 @@
         "UseManagedIdentity": false,
         "ConnectionStrings": {
             "SQLiteDBConnection": "Data Source=./food.db",
-            "SQLServerConnection": "Data Source=sqlfood15528.database.windows.net;Initial Catalog=food-db-dev; Authentication=Active Directory Default; Encrypt=True;"
+            "SQLServerConnection": "Data Source=localhost;Initial Catalog=food-db;Persist Security Info=True;User ID=sa;Password='TiTp4SQL@dmin'"
         }    
     },
     "FeatureManagement":{
@@ -36,3 +43,5 @@
         }
     }    
 }
+
+```
