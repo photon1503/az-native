@@ -1,15 +1,33 @@
-# Dapr Introduction
+# Environment Setup, Tooling & State Management
 
-This sample introduces Dapr and how to use it to build microservices and is based on the [Dapr quickstarts](https://docs.dapr.io/getting-started/quickstarts/). 
+This sample introduces on how to code, debug and deploy a Dapr based microservices to Azure Container Apps. It is based on the [Dapr quickstarts](https://docs.dapr.io/getting-started/quickstarts/). 
 
 It contains two projects:
 
-- `food-dapr-backend` - A .NET Core Web API project that uses Entity Framework and Dapr to store and retrieve food orders.
-- `food-dapr-frontend` - An MVC project that uses Dapr to call the backend API.
+- `food-dapr-backend` - A .NET Core Web API project that uses State Management to store and retrieve state. In the second demo we will use a PubSub pattern to communicate with the frontend.
+- `food-dapr-frontend` - A .NET MVC project that uses Dapr to consume the backend in a PubSub Pattern. This will be used in a sperate damo.
 
-Dapr configuration is stored in the [components](components) folder and container the following files:
+Dapr configuration is stored in the [components](components) folder and containes the following file. During development it will use `Redis` as the default state store. When deploying it will use Azure Blob Storage. We could also use Azure Cosmos DB as a state store just by changing the state store configuration.
 
 - `statestore.yaml` - Configures the state store to use Azure Blob Storage.
+
+    ```yaml
+    componentType: state.azure.blobstorage
+    version: v1
+    metadata:
+    - name: accountName
+    value: aznativedev
+    - name: accountKey
+    value: account-key
+    - name: containerName
+    value: food-dapr-backend
+    secrets:
+    - name: account-key
+    value: "<ACCOUNT_KEY>"
+    ```
+
+    ![dapr-state](_images/dapr-state.png)
+
 
 ## Readings
 
@@ -19,7 +37,11 @@ Dapr configuration is stored in the [components](components) folder and containe
 
 [Developing Dapr applications with Dev Containers](https://docs.dapr.io/developing-applications/local-development/ides/vscode/vscode-remote-dev-containers/)
 
-## Installation & First Run
+## Getting started, Basic State & Deployment to Azure Container Apps
+
+>Note: This demo assumes that you have created an Azure Container Regestry and Azure Container Apps environment. If you haven't done so, please follow the [instructions](/demos/04-azure-container-apps/01-basics/create-aca-env.azcli) to provision the required Azure Ressources using [Azure CLI]() or [Bicep]().
+
+### Dapr Environment Setup & Degugging
 
 - Install Dapr CLI
 
@@ -30,9 +52,9 @@ Dapr configuration is stored in the [components](components) folder and containe
 
     >Note: Restart the terminal after installing the Dapr CLI
 
-- Initialize default Dapr containers
+- Initialize default Dapr containers and check running containers:
 
-    ```
+    ```bash
     dapr init
     ```
 
@@ -47,11 +69,10 @@ Dapr configuration is stored in the [components](components) folder and containe
     dapr run --app-id food-backend --app-port 5001 --dapr-http-port 5010 dotnet run --launch-profile https
     ```
 
-- Test the API by invoking `http://localhost:5000/food` using the dapr sidecar: 
-    
-- GET http://localhost/`<dapr-http-port>`/v1.0/invoke/`<app-id>`/method/`<method-name>`
+- Test the API by invoking `http://localhost:5000/food` several times using the dapr sidecar. The sidecar is listening on port `5010` and the app is listening on port `5000`. The sidecar that listens to port `5010` forwards the request to the app. The sidecar is also responsible for service discovery and pub/sub.
 
     ```bash
+    GET http://localhost/<dapr-http-port>/v1.0/invoke/<app-id>/method/<method-name>
     GET http://localhost:5010/v1.0/invoke/food-backend/method/food
     ```
 
@@ -72,13 +93,21 @@ Dapr configuration is stored in the [components](components) folder and containe
 
     ![dapr-dashboard](_images/dapr-dashboard.png)
 
-## Running with Tye
+### Running multiple microservices with Tye
 
 - Install [Tye](https://github.com/dotnet/tye/). Project Tye is an experimental developer tool that makes developing, testing, and deploying microservices and distributed applications easier
 
     ```
     dotnet tool install -g Microsoft.Tye --version "0.11.0-alpha.22111.1"
     ```
+
+- Create a `tye.yaml` file in the root of the solution by running:
+
+    ```    
+    tye init
+    ```
+
+    >Note: You can skip this step as the `tye.yaml` file is already included in the solution.    
 
 - A typical tye file could look like this:
 
@@ -95,14 +124,6 @@ Dapr configuration is stored in the [components](components) folder and containe
     - port: 5002
     ```
 
-- Create a `tye.yaml` file in the root of the solution by running:
-
-    ```    
-    tye init
-    ```
-
-    >Note: You can skip this step as the `tye.yaml` file is already included in the solution.
-
 - Run the two projects with Tye
 
     ```
@@ -111,7 +132,7 @@ Dapr configuration is stored in the [components](components) folder and containe
 
     ![tye](_images/tye.png)
 
-## Using Default State Store
+### Using Default State Store
 
 - Examine `CountController.cs` and call it multiple times to increment the counter:
 
@@ -126,6 +147,20 @@ Dapr configuration is stored in the [components](components) folder and containe
     }
     ```
 
+- To increment the counter execute the following code using [Rest Client for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)    
+
+    ```http
+    @baseUrl = http://localhost:5000
+    ### Get the count and icrement it by 1
+    GET {{baseUrl}}/count/getcount HTTP/1.1
+    ```
+
+- Check the state store data in the default state store - Redis:
+
+    ```bash
+    dapr state list --store-name statestore
+    ```   
+
 - Examine the `Dapr Attach` config in `launch.json` and use it to attach the debugger to the `food-dapr-backend` process and debug the state store code:
 
     ```json
@@ -138,7 +173,7 @@ Dapr configuration is stored in the [components](components) folder and containe
     ```
     ![filter-process](_images/filter-process.png)
 
-# Deploy to Azure Container Apps
+### Deploy to Azure Container Apps
 
 - Build the food-dapr-backend image
 
@@ -147,14 +182,49 @@ Dapr configuration is stored in the [components](components) folder and containe
     grp=az-native-$env
     loc=westeurope
     acr=aznative$env
-    imgBackend=food-dapr-backend
-    az acr build --image $imgBackend:v1 --registry $acr --file dockerfile .
+    imgBackend=food-dapr-backend:v1
+    az acr build --image $imgBackend --registry $acr --file dockerfile .
     ```
+- Create a storage account to be used as state store
+
+    ```bash
+    stg=aznative$env
+    az storage account create -n $stg -g $grp -l $loc --sku Standard_LRS
+    ```
+
+- Update its values in `components/statestore.yml`
+
+    ```yaml
+    apiVersion: dapr.io/v1alpha1
+    kind: Component
+    metadata:
+    name: statestore
+    spec:
+    type: state.azure.blobstorage
+    metadata:
+        - name: storageAccount
+        value: aznative$env
+        - name: storageAccessKey
+        value: <storage-account-key>
+    ```        
+
+- Add the Dapr component to the Azure Container Apps environment
+
+    ```bash
+    az containerapp env dapr-component set -n $acaenv -g $grp \
+    --dapr-component-name statestore \
+    --yaml './components/statestore.yml'
+    ```    
+    >Note. In Azure Portal you can also create the Dapr component in the Azure Container Apps environment. It allows you to choose between Redis, Azure Blob Storage, Azure Cosmos DB and others as a state store. The inteaction with the specifics of the state store is abstracted away by Dapr:
+
+    ![state-store](_images/state-store.png)
+
 
 - Execute deploy-app.azcli to create the container app
 
     ```bash
-    az containerapp create -n $appBackend -g $grp --image $imgBackend \
+    az containerapp create -n $appBackend -g $grp \
+    --image $imgBackend \
     --environment $acaenv \
     --target-port 80 --ingress external \
     --min-replicas 0 --max-replicas 1 \
