@@ -1,0 +1,10 @@
+name: dapr-services
+services:
+- name: food-dapr-backend
+  project: food-dapr-backend/food-dapr-backend.csproj
+  bindings:
+  - port: 5001
+- name: food-dapr-frontend
+  project: food-dapr-frontend/food-dapr-frontend.csproj
+  bindings:
+  - port: 5002

@@ -1,13 +1,14 @@
 # Connecting Microservices using Distributed Application Runtime - Dapr
 
-- Introduction to Dapr
-- Dapr Environment Setup & Tooling
+- Introduction to Dapr 
 - Understanding Dapr Architecture
+- Dapr Environment Setup & Tooling
+- Running Dapr Applications using Tye
+- Dapr State Management
 - Using Dapr Components in Azure Container Apps
 - Service Invocation & Bindings
 - Publish / Subscribe
-- Dapr State Management
-- Observe applications through tracing, metrics, logs and health
+- Observability and Distributed Tracing
 
 ## Tools and Extensions
 
