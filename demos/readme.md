@@ -27,7 +27,7 @@ Audience: Azure Developers & Software Architects
 ## Themen
 
 - Introduction to Cloud Native Applications
-- Recap: Building Blocks & Architecture Overview
+- Building Blocks & Architecture Overview
 - Container Essentials & Configuration Management
 - Introduction to Azure Container Apps (ACA)
 - Implementing Microservices using Azure Functions
@@ -41,7 +41,6 @@ Audience: Azure Developers & Software Architects
 
 - What are Cloud Native Applications
 - App Monolith vs Microservices
-- Domain Driven Design (DDD) and Bounded Context Pattern
 - What are Cloud Architecture Design Patterns
 - Microservices Communication Patterns (Sync, Async, Event Driven)
 - Api Gateway Pattern, Frontend Aggregation Pattern
@@ -94,8 +93,8 @@ Audience: Azure Developers & Software Architects
 ### NoSQL Data storage using Cosmos DB
 
 - From Relational to NoSQL: Does and Don'ts
-- Domain Driven Design
-- Optimize Partitioning & Performance
+- Domain Driven Design (DDD) and Bounded Context Pattern
+- Optimize Partitioning & Performance 
 - Using SDKs and Entity Framework
 - Cosmos DB Change Feed and Event Sourcing
 - Understanding the CQRS Pattern
@@ -103,13 +102,11 @@ Audience: Azure Developers & Software Architects
 ### Designing & Implementing Event Driven Apps
 
 - Introduction to Event Driven Architecture
-- Messages vs Events
-- Message Patterns: Queues vs Topics (Pub/Sub)
 - Common Message Broker Types in Azure
-- Choosing the Messaging Broker: Features and Use-Cases
+- Messages vs Events & Queues vs Topics
 - Common Cloud Design Patterns used with Even Driven Architecture
+- Publishing & subscribing messages with Cloudevents
 - Event Sourcing and Integration Events
-- Publishing & Subscribing Events in Microservices
 - Implementing a Saga Pattern using Durable Functions
 - Orchestration vs Choreography
 - Debugging Event Driven Applications
@@ -117,15 +114,14 @@ Audience: Azure Developers & Software Architects
 ### Using Distributed Application Runtime - Dapr
 
 - Introduction to Dapr 
-- Understanding Dapr Architecture
-- Dapr Environment Setup & Tooling
-- Running Dapr Applications using Tye
-- Dapr State Management
+- Understanding Dapr Architecture & Building Blocks
+- Environment Setup, Debugging & State Management
 - Using Dapr Components in Azure Container Apps
 - Secrets and Configuration
+- Publish & subscribe
 - Service Invocation & Bindings
-- Publish / Subscribe
 - Observability and Distributed Tracing
+- Introduction to Actors
 
 ### Optimizing and Securing API Access using Api Management
 
