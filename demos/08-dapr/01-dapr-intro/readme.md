@@ -1,13 +1,13 @@
-# Environment Setup, Tooling & State Management
+# Dapr Environment Setup, Tooling & State Management
 
 This sample introduces on how to code, debug and deploy a Dapr based microservices to Azure Container Apps. It is based on the [Dapr quickstarts](https://docs.dapr.io/getting-started/quickstarts/). 
 
 It contains two projects:
 
-- `food-dapr-backend` - A .NET Core Web API project that uses State Management to store and retrieve state. In the second demo we will use a PubSub pattern to communicate with the frontend.
-- `food-dapr-frontend` - A .NET MVC project that uses Dapr to consume the backend in a PubSub Pattern. This will be used in a sperate damo.
+- `food-dapr-backend` - A .NET Core Web API project that uses State Management to store and retrieve state. In the second demo we will use a PubSub pattern to communicate wit the frontend.
+- `food-dapr-frontend` - A .NET MVC project that uses Dapr to other patterns like Secrets, Publish & Subscribe as well as Observability and Distributed tracing. This will be used in a other demos.
 
-Dapr configuration is stored in the [components](components) folder and containes the following file. During development it will use `Redis` as the default state store. When deploying it will use Azure Blob Storage. We could also use Azure Cosmos DB as a state store just by changing the state store configuration.
+Dapr Configuration is stored in the [components](components) folder and contains the following file. During development it will use `Redis` as the default state store. When deploying it will use Azure Blob Storage. We could also use Azure Cosmos DB as a state store just by changing the state store configuration.
 
 - `statestore.yaml` - Configures the state store to use Azure Blob Storage.
 
@@ -29,7 +29,9 @@ Dapr configuration is stored in the [components](components) folder and containe
     ![dapr-state](_images/dapr-state.png)
 
 
-## Readings
+## Docs & Ressources
+
+[Dapr Overview](https://docs.dapr.io/concepts/overview/)
 
 [Dapr CLI](https://docs.dapr.io/reference/cli/cli-overview/)
 
@@ -37,11 +39,13 @@ Dapr configuration is stored in the [components](components) folder and containe
 
 [Developing Dapr applications with Dev Containers](https://docs.dapr.io/developing-applications/local-development/ides/vscode/vscode-remote-dev-containers/)
 
+[Dapr on YouTube](https://www.youtube.com/channel/UCtpSQ9BLB_3EXdWAUQYwnRA)
+
 ## Getting started, Basic State & Deployment to Azure Container Apps
 
 >Note: This demo assumes that you have created an Azure Container Regestry and Azure Container Apps environment. If you haven't done so, please follow the [instructions](/demos/04-azure-container-apps/01-basics/create-aca-env.azcli) to provision the required Azure Ressources using [Azure CLI]() or [Bicep]().
 
-### Dapr Environment Setup & Degugging
+### Dapr Environment Setup & Debugging
 
 - Install Dapr CLI
 
@@ -134,15 +138,27 @@ Dapr configuration is stored in the [components](components) folder and containe
 
 ### Using Default State Store
 
-- Examine `CountController.cs` and call it multiple times to increment the counter:
+- Add DaprClient to `Program.cs`
 
     ```c#
+    var builder = WebApplication.CreateBuilder(args);
+    ...
+    // Add DaprClient to the ioc container
+    builder.Services.AddDaprClient();
+    ```
+- Examine `CountController.cs` and call `getCount()` multiple times to increment the counter and receive its current value:
+
+    ```c#
+    public CountController(DaprClient daprClient)
+    {
+        client = daprClient;
+    }
+
     [HttpGet("getCount")]
     public async Task<int> Get()
     {
-        var daprClient = new DaprClientBuilder().Build();
-        var counter = await daprClient.GetStateAsync<int>(storeName, key);
-        await daprClient.SaveStateAsync(storeName, key, counter + 1);
+        var counter = await client.GetStateAsync<int>(storeName, key);
+        await client.SaveStateAsync(storeName, key, counter + 1);
         return counter;
     }
     ```
@@ -215,7 +231,7 @@ Dapr configuration is stored in the [components](components) folder and containe
     --dapr-component-name statestore \
     --yaml './components/statestore.yml'
     ```    
-    >Note. In Azure Portal you can also create the Dapr component in the Azure Container Apps environment. It allows you to choose between Redis, Azure Blob Storage, Azure Cosmos DB and others as a state store. The inteaction with the specifics of the state store is abstracted away by Dapr:
+    >Note. In Azure Portal you can also create the Dapr component in the Azure Container Apps environment. It allows you to choose between Redis, Azure Blob Storage, Azure Cosmos DB and others as a state store. The interaction with the specifics of the state store is abstracted away by Dapr:
 
     ![state-store](_images/state-store.png)
 
@@ -235,6 +251,8 @@ Dapr configuration is stored in the [components](components) folder and containe
     --registry-username $acr \
     --registry-password $pwd 
     ```
+
+    >Note: Accessing ACR could also done using a managed identity. Check the [documentation](https://learn.microsoft.com/en-us/azure/container-apps/managed-identity-image-pull?tabs=azure-cli&pivots=command-line) for more details.
 
 - Execute the /count/getCount method multiple times to increment the counter
 
