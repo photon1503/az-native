@@ -4,7 +4,7 @@ loc=westeurope
 acr=aznative$env
 acaenv=aznative-$env
 storage=aznative$env
-appBackend=food-dapr-backend
+appBackend=food-api-dapr
 imgBackend=$acr.azurecr.io/$appBackend
 
 pwd=$(az acr credential show -n $acr --query passwords[0].value -o tsv)
@@ -16,7 +16,7 @@ echo "key: $key"
 
 az containerapp env dapr-component set -n $acaenv -g $grp \
     --dapr-component-name statestore \
-    --yaml './components/statestore.yml'
+    --yaml './components/statestore-blob.yml'
 
 az containerapp create -n $appBackend -g $grp \
     --image $imgBackend \
