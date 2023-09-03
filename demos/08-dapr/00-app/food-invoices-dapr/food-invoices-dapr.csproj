@@ -4,11 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>FoodDapr</RootNamespace>
+    <RootNamespace>food_invoices_dapr</RootNamespace>
   </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.8.0" />
     <PackageReference Include="Dapr.AspNetCore" Version="1.11.0" />
     <PackageReference Include="Dapr.Client" Version="1.11.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/food-mvc-dapr.csproj",
+                "${workspaceFolder}/food-invoices-dapr.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/food-mvc-dapr.csproj",
+                "${workspaceFolder}/food-invoices-dapr.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,21 +33,21 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/food-mvc-dapr.csproj"
+                "${workspaceFolder}/food-invoices-dapr.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "appId": "food-frontend",
-            "appPort": 5002,
-            "httpPort": 5020,
-            "componentsPath": "components",
+            "appId": "food-invoices",
+            "appPort": 5003,
+            "httpPort": 5030,
             "label": "dapr-debug",
+            "componentsPath": "components",
             "type": "dapr",
             "dependsOn": "build"
         },
         {
-            "appId": "food-frontend",
+            "appId": "food-invoices",
             "label": "daprd-down",
             "type": "daprd-down"
         }
