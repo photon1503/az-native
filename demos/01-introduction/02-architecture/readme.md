@@ -10,32 +10,41 @@
 - Access & Management: API Management & Application Gateway
 - Real Time: Azure SignalR Service, Azure Web PubSub
 
-## Food App - A food delivery application
+## Food App - Architecture Overview
 
-[food-catalog-api](/app/food-catalog-api/) provides a REST API to manage a food catalog.
-
-[food-shop-ui](/app/food-shop-ui//) consumes it and provides an Online Food Shop implemented in Angular.
-
-[food-orders-api](/app/food-orders-api/) provides a REST API to manage orders.
-
-[food-saga](/app/food-saga/) provides a saga implementation.
-
-[food-orders-dashboard](/app/food-orders-dashboard/) consumes it and provides a dashboard to manage orders.
-
-[food-orders-dashboard-func](/app/food-orders-dashboard-func/) provides a serverless function to distribute orders in real time to the dashboard that is used in the kitchen.
-
-[food-payments-api](/app/food-payments-api/) provides a REST API to manage payments.
-
-[food-delivery](/app/food-delivery) is a microservice that provides a REST API to manage deliveries.
-
-[food-invoices](/app/food-invoices/) provides a REST API to generate invoices.
-
-[food-pic-optimizer](/app/food-pic-optimizer/) provides a REST API to optimize images.
-
-[graph-mail-demon-api](/app/graph-mail-demon-api/) provides a REST API to send emails via Microsoft Graph.
-
+The Food App is a food delivery application that is used to demonstrate the different Azure building blocks. It is a simple food delivery application that consists of the following components:
 
 ![food-app](_images/app.png)
+
+### Food Shop UI
+
+A simple Angular Food Shop. It requests the menu from Food Catalog API and then uses the Food Order API to place orders.
+
+### Food Catalog Api
+
+An API that returns a list of food items from a relational SQL Server database. It cloud also be implemented using a NoSQL database like Cosmos DB, but for the sake of simplicity we are using a relational database.
+
+### Food Order Function
+
+An API that places orders that are stored in a Cosmos DB. Later on we will upgrade this API to implement a Saga Pattern to handle distributed transactions.
+
+### Food Payments Api
+
+An Api that picks up orders from a Service Bus and processes them. When the payment is processed it sends a message to a Service Bus topic to notify the Food Order Api that the payment was processed.
+
+### Kitchen Dashboard
+
+An Angular standalone app that displays the orders that were placed and paid in real time. It is implemented as Progressive Web App (PWA) and is used in the kitchen to guide the cooking process. When preparation is done the order is marked as ready and the delivery service is notified.
+
+It uses `Kitchen Dashboard Function` to implement the real time functionality.
+
+### Food Delivery Api
+
+An Api that picks up prepared food orders from a Service Bus and delivers them. When the delivery is done it sends a message to a Service Bus to notify that the delivery was done.
+
+### Graph Mail Daemon
+
+A daemon that sends notification e-mails to confirm orders after they are placed and paid, and sends the final invoice after the delivery is done. It uses the Microsoft Graph API to send e-mails. In real life one could also use SendGrid or other e-mail service.Microsoft Graph.
 
 ## Links & Resources
 
