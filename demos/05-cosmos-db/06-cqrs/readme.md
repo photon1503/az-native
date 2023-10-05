@@ -1,3 +1,7 @@
 # Understanding the CQRS Pattern
 
-https://github.com/TomaszKandula/CosmosDbExampleWithCqrs
+## Links & Resources
+
+[MediatR](https://github.com/jbogard/MediatR)
+
+## CQRS with MediatR
