@@ -1,14 +1,4 @@
-# Building Blocks & Architecture Overview
-
-- Class Sample Architecture Diagram & Introduction to the Azure Building Blocks used in this class
-- Deploying App Resources to Azure using Bicep
-- Hosting: Azure Container Apps and Functions (Serverless / Containers)
-- Configuration Management, Secrets: Key Vault, App Config Service
-- Authentication & Authorization: Microsoft Identity & Managed Identities
-- Data Storage: Azure Cosmos DB, Azure SQL, Blob Storage
-- Messaging Brokers: Service Bus, Event Hub, Event Grid
-- Access & Management: API Management & Application Gateway
-- Real Time: Azure SignalR Service, Azure Web PubSub
+# Architecture Overview of the Sample App & Services
 
 ## Links & Resources
 
@@ -67,7 +57,7 @@ The state of the cooking progress is saved in the production service (5) which i
 
 The Delivery service picks up prepared food orders from a Service Bus and delivers them (6). When the delivery is done it sends a message to a Service Bus to notify that the delivery was made.
 
-### Graph Mail Daemon
+### Graph Mail Service
 
 A daemon that sends notification e-mails to confirm orders after they are placed and paid (5) and sends the final invoice after the delivery is done (7). 
 
