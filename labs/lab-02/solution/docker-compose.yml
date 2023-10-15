@@ -1,0 +1,26 @@
+version: '3.4'
+
+services: 
+  catalog-service:
+    image: catalog-service
+    ports: 
+      - "5051:80"
+  orders-service:
+    image: orders-service
+    ports:
+      - "5052:80"
+  food-shop-ui:
+    image: food-shop-ui
+    ports:
+      - "5053:80"      
+    environment:
+      - ENV_CATALOG_API_URL=http://localhost:5051
+      - ENV_ORDERS_API_URL=http://localhost:5052
+
+    depends_on: 
+      - catalog-service
+      - orders-service
+
+# catalog-service tester: http://localhost:5051/
+# orders-service tester: http://localhost:5052/
+# food-shop-ui: http://localhost:5053/
