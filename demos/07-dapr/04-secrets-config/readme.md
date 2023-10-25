@@ -1,9 +1,13 @@
 # Secrets and Configuration
 
-- Using Dapr Secrets Store and Azure Key Vault
-- Using Dapr Configuration Store
+- Dapr Secrets Store and Azure Key Vault
+- Dapr Configuration Store and Azure App Configuration
 
 ## Links & Resources
+
+[Dapr Secret Stores](https://docs.dapr.io/reference/components-reference/supported-secret-stores/)
+
+[Dapr Configuration Stores](https://docs.dapr.io/reference/components-reference/supported-configuration-stores/)
 
 [The Dapr secrets management building block](https://learn.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/secrets-management)
 
@@ -15,7 +19,11 @@ Dapr’s dedicated secrets building block API makes it easier for developers to 
 
 ![Dapr Secrets](_images/secrets.png)
 
-- Execute [create-kv-dapr-app.azcli](create-kv-dapr-app.azcli) to create a Key Vault and a secret in Azure Key Vault.
+- Execute [create-secrets-config-app.azcli](create-secrets-config-app.azcli) to create a Key Vault, the App Configuration Service and a secret in Azure Key Vault.
+
+- Create an Entra ID App Registration an assign the following permissions:
+
+    - Azure Key Vault: `Get` and `List` permissions
 
 - Start the Dapr sidecar and the [food-api-dapr](../00-app//food-api-dapr/) application using the following command:
 
@@ -29,13 +37,13 @@ Dapr’s dedicated secrets building block API makes it easier for developers to 
     apiVersion: dapr.io/v1alpha1
     kind: Component
     metadata:
-    name: azurekeyvault
+    name: azure-keyvault
     spec:
     type: secretstores.azure.keyvault
     version: v1
     metadata:
     - name: vaultName
-        value: "aznativekvdev"
+        value: "az-native-kv-dev"
     - name: azureTenantId
         value: ""
     - name: azureClientId
@@ -44,7 +52,7 @@ Dapr’s dedicated secrets building block API makes it easier for developers to 
         value: ""
     ```
 
-- Examine [KeyVaultController.cs](../00-app/food-api-dapr/Controllers/KeyVaultController.cs) and the `GetSecret()` method:
+- Examine [KeyVaultController.cs](../00-app/food-service-dapr/Controllers/KeyVaultController.cs) and the `GetSecret()` method:
 
     ```c#    
     [HttpGet("getSecret")]
@@ -63,3 +71,22 @@ Dapr’s dedicated secrets building block API makes it easier for developers to 
     GET {{baseUrl}}/keyvault/getsecret?secretName=dapr-secret
     content-type: application/json
     ```
+
+## Using Dapr Configuration Store and Azure App Configuration
+
+Dapr’s dedicated configuration building block API makes it easier for developers to consume application configuration from a configuration store.
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+name: azureappconfig
+spec:
+type: configuration.azure.appconfig
+version: v1
+metadata:
+- name: host 
+    value: <HOST>
+- name: connectionString 
+    value: <CONNECTIONSTRING>
+```

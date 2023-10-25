@@ -15,7 +15,6 @@ builder.Services.AddDbContext<FoodDBContext>(options =>
        options.UseSqlite(conString);
        options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
    }
-
 );
 
 // Dapr
@@ -56,11 +55,11 @@ app.UseSwaggerUI(c =>
 //Cors and Routing
 app.UseCors("nocors");
 
-// app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
 // Dapr Subscribe Handler used for Pub Sub
+app.UseCloudEvents();
 app.MapSubscribeHandler();
 
 app.Run();
