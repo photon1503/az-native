@@ -90,26 +90,12 @@ We will use Azure SQL for the Catalog service, Redis for Production (Kitchen) an
 
 - If you don't want to draw charts just implement the classes and the interfaces for the message flow in `C#` or `TypeScript` and document the message flow in the code. You can do this in a separate project or in plain markdown or a diagram tool of your choice.
 
-
-## Task: Examine the Domain Message Flow Model and Design the Message Data Structure
-
-- Examine the `Order Service Domain Message Flow Model`. 
-
-    ![domain-message-flow-model](_images/domain-message-flow.png)
-
-- Design the data structures for the messages that will be exchanged between the services.
-
-- You can use the [Miro - Entity Relationship Diagram Template](https://miro.com/templates/entity-relationship-diagram/) or some other tool or even a piece of paper.
-
-- If you don't want to draw charts just implement the classes and the interfaces for the message flow in `C#` or `TypeScript` and document the message flow in the code. You can do this in a separate project or in plain markdown or a diagram tool of your choice.
-
-## Task: Create the Physical Design
+## Task: Create & Deploy the Physical Design
 
 - Use the Cosmos DB Account created in Lab 01 to create the containers for `food-app` in a `food-app` database. To keep this simple we will use the same database for all services. In a real world scenario you would create a database for each service.
 
 - Create the following containers and chose a partition key 
 
-  - `CatalogItems` for the `Catalog Service`
   - `Orders` for the `Orders Service`
   - `Payments` for the `Payment Service`
   - `Production` for the `Kitchen Service`
@@ -117,6 +103,19 @@ We will use Azure SQL for the Catalog service, Redis for Production (Kitchen) an
 
 - Use `IaC (Azure CLI or Bicep)` in order to be able to drop and recreate the containers easily.
 
-## Task: Event Sourcing & CQRS - Optional
+## Task: Event Sourcing & CQRS
 
 - Take the [Event Sourcing](../../demos/05-cosmos/05-event-sourcing/) & [CQRS demos](../../demos/05-cosmos/06-cqrs/) from this module as a reference and implement CQRS & Event Sourcing for the `Orders Service` in your own project.
+
+    - Deploy Cosmos DB and the required containers
+    - Test the event store
+    - Implement the event processor
+    - Implement the CQRS pattern using MediatR
+    - Test the CQRS pattern
+    - Add a `getAllOrdersForCustomer` method with a `customerId` parameter to the `OrdersController` and implement the query side of the CQRS pattern
+    
+    >Note: You can copy some of the code but use your own project to set up the solution. The goal is to be able to setup CQRS & Event Sourcing on your own.    
+
+## Task: Publish the CQRS Orders Service to Azure Container Apps
+
+- Containerize the `CQRS Orders Service` and publish it to Azure Container Apps.
