@@ -2,18 +2,16 @@
 
 Companion Material for Class Delivery by [Alexander Pajer](https://www.linkedin.com/in/alexander-pajer-3bb26511a/) containing:
 
-  - [Getting Started](./Tooling/00-GettingStarted)
-  - [Instructor Demos](./Demos)
-  - [Requirements / Tooling](./Tooling)
-    - [Register Azure Pass](./Tooling/05-AzurePass)
-    - [Git & GitHub Basics](./Tooling/01-Github)
-    - [Visual Studio Code Intro](./Tooling/02-VSCode)
-    - [Document Repos using Markdown](./Tooling/03-Markdown)
-    - [Using Azure CLI](./Tooling/04-CLI)
-    - [Docker and WSL Setup](./Tooling/08-Docker-WSL)
-    - [Configure VS Code REST Client Extension](./Tooling/07-REST-Client)
-  - [Lab VM Setup](./Setup)
-    - [Base Dev Environment Setup including Visual Studio Code Extensions](./Setup/#basics)
+  - [Instructor Demos](./demos)
+  - [Requirements / tooling](./tooling)
+    - [Git & GitHub Basics](./tooling/01-github)
+    - [Visual Studio Code Intro](./tooling/02-vscode)
+    - [Document Repos using Markdown](./tooling/03-markdown)
+    - [Using Azure CLI](./tooling/04-cli)
+    - [Docker and WSL Setup](./tooling/08-docker-wsl)
+    - [Configure VS Code REST Client Extension](./tooling/07-rest-client)
+  - [Lab VM Setup](./setup)
+    - [Base Dev Environment Setup including Visual Studio Code Extensions](./setup/#basics)
   - [Labs](./Labs)
 
 ## Required Cloud Resources
@@ -22,11 +20,8 @@ Companion Material for Class Delivery by [Alexander Pajer](https://www.linkedin.
 
 - Azure Subscription:
 
-  - [Azure Passes](https://www.microsoftazurepass.com/) with [Code](./Tooling/05-AzurePass)
   - Paid or MSDN Subscriptions. Please do not use a Production Subscription for Training
   - [Azure Trial Subscription](https://azure.microsoft.com/en-us/free/)
-
-> Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts. A guide on how to use your Azure Pass can be found [here](./Tooling/05-AzurePass)
 
 ## Contributing
 
