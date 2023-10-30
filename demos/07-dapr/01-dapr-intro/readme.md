@@ -1,6 +1,6 @@
 # Developer Environment Setup & Debugging 
 
-## Docs & Resources
+## Links & Resources
 
 [Dapr Overview](https://docs.dapr.io/concepts/overview/)
 
@@ -10,9 +10,11 @@
 
 [Developing Dapr applications with Dev Containers](https://docs.dapr.io/developing-applications/local-development/ides/vscode/vscode-remote-dev-containers/)
 
-[Dapr on YouTube](https://www.youtube.com/channel/UCtpSQ9BLB_3EXdWAUQYwnRA)
+## Tools and Extensions
 
-[eShopOnDapr](https://learn.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/reference-application)
+[Dapr - Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-dapr)
+
+[Tye - Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-tye)
 
 ## Getting started, Basic State & Deployment to Azure Container Apps
 
