@@ -36,6 +36,18 @@
                 "${workspaceFolder}/catalog-service.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "appId": "catalog-service",
+            "appPort": 5011,
+            "label": "dapr-debug",
+            "type": "dapr",
+            "dependsOn": "build"
+        },
+        {
+            "appId": "catalog-service",
+            "label": "daprd-down",
+            "type": "daprd-down"
         }
     ]
 }
