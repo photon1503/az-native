@@ -1,4 +1,5 @@
 @ordersUrl = https://localhost:5002
+@ordersUrlAz =https://orders-service.greendesert-0c4350be.westeurope.azurecontainerapps.io
 @customerId = 1
 
 ### Add new order
@@ -15,8 +16,9 @@ content-type: application/json
         "phone": "+43 123 456 789"
     },
     "payment": {
-        "type": "Bank Transfer",
-        "accountNumber": "9876"
+        "name": "Marcela Tatra",
+        "accountNumber": "9876",
+        "type": "Bank Transfer"
     },
     "items": [
         {

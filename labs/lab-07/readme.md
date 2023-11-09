@@ -1,7 +1,12 @@
 # Lab 07 - Using Distributed Application Runtime - Dapr
 
 - Setup Developer Environment to support Dapr
-- Using Dapr Pub/Sub
+- Provision the required infrastructure for Dapr Pub/Sub
+- Get familiar with the starter projects
+- Implement the payment process
+- Publish to Azure Container Apps
+- Cooking Service, Delivery Service - Optional
+
 
 ## Task: Setup Developer Environment to support Dapr
 
@@ -51,26 +56,72 @@
 
 - Test your debug configuration
 
-    ![launch-debug](_images/launch-debug.png)    
+    ![launch-debug](_images/launch-debug.png)
 
-## Task: Using Dapr Pub/Sub
+## Task: Provision the required infrastructure for Dapr Pub/Sub
 
-To make local development and debug easier use the following ports reference for the services:
+- Create a new Azure Service Bus Namespace
 
-| .NET Api Services         | Https Port | Http Port | Dapr Port | Dapr App ID          | Docker Port|
-| -------                   | --------- | ---------- | --------- | -------------        | -----|
-| Order Service             | 5002      | 5022       | 5012      | order-service        | 5052 |
-| Payment Service           | 5004      | 5024       | 5014      | payment-service      | 5054 |
-| Bank Actor Service        | 5005      | 5025       | 5015      | bank-actor           | 5055 |
-| Cooking Service           | 5006      | 5026       | 5016      | cooking-service      | 5056 |
-| Delivery Service          | 5007      | 5027       | 5017      | deliver-service      | 5057 |
-| Graph NotificationService | 5008      | 5028       | 5018      | notification-service | 5058 |
+    ```bash
+    sbNS=aznativesb$env
+    az servicebus namespace create --name <your-namespace-name> --resource-group <your-resource-group-name> --location <your-location> --sku Standard
+    ```    
 
- 
-| Azure Functions                 | Http Port | Docker Port|
-| -------                         | --------- | ---------- | 
-| Order Event Processor Function  | 7073      |            |	
-| Payment Service Function        | 7074      |            | 
-| Cooking Dashboard Function      | 7076      |            |
-| Optimizer Function              | 7077      |            |
-| Invoices Job Function           | 7078      |            |
+- Create the following Azure Service Bus topics using the following command:
+
+    - payment-request
+    - payment-response
+    - cooking-request
+    - cooking-response
+    - delivery-request
+    - delivery-response
+
+    ```bash
+    sbNS=aznativesb$env
+    az servicebus topic create --name <your-topic-name> --namespace-name <your-namespace-name> --resource-group <your-resource-group-name>
+    ```
+
+## Task: Get familiar with the starter projects
+
+- Examine the [starter projects](./starter/). Some of the projects we have used in previous labs, other are well prepared starters. All projects have the required Dapr components defined in the `<project>/components` folder. The required NuGet packages are already installed in all projects that require Dapr.
+
+- To make local development and debug easier use the following ports reference for the services:
+
+    | .NET Api Services         | Https Port | Http Port | Dapr Port | Dapr App ID          | Docker Port|
+    | -------                   | --------- | ---------- | --------- | -------------        | -----|
+    | Order Service             | 5002      | 5022       | 5012      | order-service        | 5052 |
+    | Payment Service           | 5004      | 5024       | 5014      | payment-service      | 5054 |
+    | Bank Actor Service        | 5005      | 5025       | 5015      | bank-actor           | 5055 |
+    | Cooking Service           | 5006      | 5026       | 5016      | cooking-service      | 5056 |
+    | Delivery Service          | 5007      | 5027       | 5017      | deliver-service      | 5057 |
+    | Graph NotificationService | 5008      | 5028       | 5018      | notification-service | 5058 |
+
+    
+    | Azure Functions                 | Http Port | Docker Port|
+    | -------                         | --------- | ---------- | 
+    | Order Event Processor Function  | 7073      |            |
+
+- Examine the `Food App Domain Message Flow`. 
+
+    ![message-flow-model](_images/message-flow.png)    	
+
+- Examine the `Food App Domain Message Flow`. 
+
+    ![message-flow-model](_images/message-flow-data-model.png)
+
+## Task: Implement the payment process
+
+- With this task we will implement the full Payment Process using Dapr Pub/Sub including the Bank Actor Service.
+
+    ![payment-process](_images/payment-process.png)
+   
+## Task: Publish to Azure Container Apps
+
+
+## Task: Cooking Service, Delivery Service - Optional
+
+- If your time permits you can repeat the pattern uses with the Payment Service for the Cooking Service, Delivery Service and Notification Service. We will extend the Cooking Service with the Cooking Dashboard Function later on
+
+- Send the requests to the according service, wait for a few seconds and send a positive that will be consumed by the Order Service
+
+- If you want you can also publish the Cooking Service and Delivery Service to Azure Container Apps
