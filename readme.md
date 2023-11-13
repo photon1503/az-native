@@ -30,3 +30,18 @@ Companion Material for Class Delivery by [Alexander Pajer](https://www.linkedin.
 ## Contributing
 
 Feel free to contribute. When contribute implement your changes / additions on a feature branch in your fork and issue a pull request after completion. An introduction video into forks and pull requests can be found [here](https://www.youtube.com/watch?v=nT8KGYVurIU)
+
+# Lab infos
+## Slides
+https://integrationsonline-my.sharepoint.com/:f:/g/personal/alexander_pajer_integrations_at/EgwneC_haTlKhLvB4Km-P5YBBKuqd1EEHIhKKJn_AayPiA?e=3NzGzj
+
+## E-shop
+https://github.com/dotnet-architecture/eShopOnContainers
+
+## Architecture Center
+https://learn.microsoft.com/en-us/azure/architecture/browse/
+
+## Cloud patterns
+https://learn.microsoft.com/en-us/azure/architecture/patterns/
+
+Miro.com
