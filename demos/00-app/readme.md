@@ -2,3 +2,4 @@
 
 - config-service
 - config-ui
+- test
