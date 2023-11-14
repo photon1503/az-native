@@ -16,18 +16,9 @@ We will use Azure SQL for the Catalog service, and Cosmos DB as our NoSQL databa
   
     ![architecture](_images/app.png)
 
-- Do not go into too much detail. Just identify the main entities and value objects for each service as you will create 
+- Possible Solution:
 
-- You will use the output of this task later on to create containers in Cosmos DB.
-
-- You can use a pice of paper or an online whiteboard like [draw.io](https://draw.io/) or [Miro](https://miro.com/) to draw your results.  
-
-## Task: Order Service Bounded Context
-
-- Document the `Order Service Bounded Context`. If you want you can use [Miro and the Bounded Context Canvas](https://miro.com/miroverse/the-bounded-context-canvas/), some other tool or even a piece of paper.
-
-- Follow the guide on [GitHub - https://github.com/ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
-
+  ![domain-model](_images/domain-model.png)
 
 ## Task: Designing the Data Model
 
@@ -39,11 +30,9 @@ We will use Azure SQL for the Catalog service, and Cosmos DB as our NoSQL databa
 
     ![food-shop-ui](_images/food-shop-ui.png)
 
-- Design the data model for the `Orders Service` based on the entities and value objects you identified in the previous task and the `Food Shop UI` data model.
+- Possible Solution:
 
-- You can use the [Miro - Entity Relationship Diagram Template](https://miro.com/templates/entity-relationship-diagram/) or some other tool or even a piece of paper.
-
-- If you don't want to draw charts just implement the classes and the interfaces for the message flow in `C#` or `TypeScript` and document the message flow in the code. You can do this in a separate project or in plain markdown or a diagram tool of your choice.
+  ![data-model](_images/data-model.png) 
 
 ## Task: Create & Deploy the Physical Design
 
@@ -51,34 +40,50 @@ We will use Azure SQL for the Catalog service, and Cosmos DB as our NoSQL databa
 
 - Create the containers `orders` and `order-events` and chose a partition key. Use `IaC (Azure CLI or Bicep)` in order to be able to drop and recreate the containers easily.
 
+- Possible Solution:
+
+  ![physical-design](_images/physical-design.png) 
+
 ## Task: Event Sourcing & CQRS
 
-- Take the [Event Sourcing](../../demos/05-cosmos/05-event-sourcing/) & [CQRS demos](../../demos/05-cosmos/06-cqrs/) from this module as a reference and implement CQRS & Event Sourcing for the `Orders Service` in your own project.
+- Open [order-service-cqrs](./solution/orders-service-cqrs/) in a new VS Code instance.
 
-    - Deploy Cosmos DB and the required containers
-    - Test the event store
-    - Implement the event processor
-    - Implement the CQRS pattern using MediatR
-    - Test the CQRS pattern
-    - Add a `getAllOrdersForCustomer` method with a `customerId` parameter to the `OrdersController` and implement the query side of the CQRS pattern
-    
-    >Note: You can copy some of the code but use your own project to set up the solution. The goal is to be able to setup CQRS & Event Sourcing on your own.   
+- Make sure you copied the correct settings to `appsettings.json`
 
-## Task: Containerize Apps
+- Examine `orders-api.csproj` and the referenced packages including MediatR.
 
-- Containerize the following apps:
+- Examine Program.cs and the `IOrderAggregates`, `IOrderEventsStore` and `AddMediatR`. Also look at the implementation code of the interfaces.
 
-  - Food Shop UI
-  - Orders Service CQRS
-  - Catalog Service
+- Examine OrdersController.cs and the injection of `ISender`.
 
-## Task: Test the CQRS Orders Service
+- Examine the CQRS folder and the content of Queries and its Handlers. Try to understand its purpose.
 
-- Test the following apps are working together correctly on Azure Container Apps:
+- Examine the CQRS folder and the content of Commands and its Handlers. Try to understand its purpose.
 
-  - Food Shop UI
-  - Orders Service CQRS
-  - Order Events Processor
-  - Catalog Service
+- Start the app in F5 debug mode and use the provides `orders-tester.http` to submit an order.
 
-- If your time permits you can deploy them to Azure Container Apps and test them there.  
+- Check if the order event was stored in the `order-events` container.
+
+- Open [order-event-processor](./solution/order-events-processor/) in a new VS Code instance.
+
+- Make sure you copied the correct settings to `CosmosDBConnectionString`
+
+- Examine `ProcessOrders.cs` and notice how it consumes the change feed from Cosmos DB. Notice how it creates the initial order in the `orders` container and then updates the order with the events from the `order-events` container.
+
+## Task: Deploy Containerize Apps
+
+- Go to the solution folder and run `create-images.azcli`
+
+- Execute `deploy-app.azcli`. Deploy one app after the other and think how you could test the app after each deployment.
+
+Examples:
+
+- After deploying the catalog service, you can test the API using the Swagger UI.
+
+- After deploying the order service use the REST Client to submit an order and check if it was stored in the database.
+
+- After deploying the shop-ui you can submit an order using the UI. Again you can check if the order was stored in the database. Don't worry about the duplicate orders for now.
+
+- After deploying the shop-ui you can submit an order using the UI. Again you can check if the order was stored in the database. Don't worry about the duplicate orders for now.
+
+- Run the event processor on the local machine and submit another order. Check if the order was stored in the `orders` container.
