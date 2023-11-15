@@ -1,4 +1,4 @@
-env=dev
+env=gerald
 loc=westeurope
 grp=az-native-$env
 cosmosDbAcct=az-native-cosmos-nosql-$env
@@ -10,7 +10,7 @@ acaenv=acaenv-az-native-$env
 storageAcct=aznativestorage$env
 
 pwd=$(az acr credential show -n $acr --query passwords[0].value -o tsv)
-loginSrv=$(az acr list --query "[?name=='$acr'].loginServer" -o tsv) 
+loginSrv=$(az acr list --query "[?name=='$acr'].loginServer" -o tsv)
 
 aiKey=$(az keyvault secret show --vault-name $vault --name "aiKey" --query  value -o tsv)
 echo $aiKey
@@ -24,50 +24,50 @@ az cosmosdb sql container create --account-name $cosmosDbAcct --database-name $c
 
 ## Catalog Service
 az containerapp create -n catalog-service -g $grp \
-    --image $acr.azurecr.io/catalog-service \
-    --environment $acaenv \
+    --image aznativecontainersgerald.azurecr.io/catalog-service \
+    --environment acaenv-az-native-gerald \
     --target-port 80 --ingress external \
     --min-replicas 0 --max-replicas 1 \
-    --registry-server $loginSrv \
-    --registry-username $acr \
-    --registry-password $pwd \
+    --registry-server aznativecontainersgerald.azurecr.io \
+    --registry-username aznativecontainersgerald \
+    --registry-password c4XL40J6KcxbGNoWzcI6w8jEH0vkhzwDWHTnxVaCgw+ACRCoY1vf \
     --env-vars "App__UseSQLite=true"
 
-az containerapp ingress cors enable -n catalog-service -g $grp --allowed-origins * --allow-credentials true    
+az containerapp ingress cors enable -n catalog-service -g $grp --allowed-origins * --allow-credentials true
 
-catalogUrl=$(az containerapp show -n catalog-service -g $grp --query properties.configuration.ingress.fqdn -o tsv)   
+catalogUrl=$(az containerapp show -n catalog-service -g $grp --query properties.configuration.ingress.fqdn -o tsv)
 
 echo $catalogUrl
 
 ## Orders Service
-cosmosKey=$(az keyvault secret show --vault-name $vault --name "cosmosKey" --query  value -o tsv)    
+cosmosKey=$(az keyvault secret show --vault-name $vault --name "cosmosKey" --query  value -o tsv)
 
 az containerapp create -n orders-service -g $grp \
-    --image $acr.azurecr.io/orders-service \
-    --environment $acaenv \
+    --image aznativecontainersgerald.azurecr.io/orders-service \
+    --environment acaenv-az-native-gerald  \
     --target-port 80 --ingress external \
     --min-replicas 0 --max-replicas 1 \
-    --registry-server $loginSrv \
-    --registry-username $acr \
-    --registry-password $pwd \
-    --env-vars "CosmosDB__AccountKey=$cosmosKey" 
+    --registry-server aznativecontainersgerald.azurecr.io \
+    --registry-username aznativecontainersgerald \
+    --registry-password c4XL40J6KcxbGNoWzcI6w8jEH0vkhzwDWHTnxVaCgw+ACRCoY1vf \
+    --env-vars "CosmosDB__AccountKey=$cosmosKey"
 
-az containerapp ingress cors enable -n orders-service -g $grp --allowed-origins * --allow-credentials true    
-    
-ordersUrl=$(az containerapp show -n orders-service -g $grp --query properties.configuration.ingress.fqdn -o tsv)    
+az containerapp ingress cors enable -n orders-service -g $grp --allowed-origins * --allow-credentials true
+
+ordersUrl=$(az containerapp show -n orders-service -g $grp --query properties.configuration.ingress.fqdn -o tsv)
 
 echo $ordersUrl
 
 ## Shop UI
 az containerapp create -n shop-ui -g $grp \
-    --image $acr.azurecr.io/shop-ui \
-    --environment $acaenv \
+    --image aznativecontainersgerald.azurecr.io/shop-ui \
+    --environment acaenv-az-native-gerald \
     --target-port 80 --ingress external \
     --min-replicas 0 --max-replicas 1 \
-    --registry-server $loginSrv \
-    --registry-username $acr \
-    --registry-password $pwd \
-    --env-vars "ENV_CATALOG_API_URL=https://$catalogUrl" "ENV_ORDERS_API_URL=https://$ordersUrl"     
+    --registry-server aznativecontainersgerald.azurecr.io \
+    --registry-username aznativecontainersgerald \
+    --registry-password c4XL40J6KcxbGNoWzcI6w8jEH0vkhzwDWHTnxVaCgw+ACRCoY1vf \
+    --env-vars "ENV_CATALOG_API_URL=https://$catalogUrl" "ENV_ORDERS_API_URL=https://$ordersUrl" "ENV_VERSION=1"
 
 ## Order Event Processor
 cosmosDBCon=$(az cosmosdb keys list --name $cosmosDbAcct -g $grp --type connection-strings --query connectionStrings[0].connectionString -o tsv)
