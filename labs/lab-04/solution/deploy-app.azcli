@@ -1,0 +1,24 @@
+env=dev
+grp=az-native-$env
+loc=westeurope
+app=payment-service-lab4-$env
+storageAcct=aznativestorage$env
+
+az group create -n $grp -l $loc
+
+az storage account  create -n $storageAcct -g $grp 
+url=$(az functionapp create -n $app -g $grp -s $storageAcct --consumption-plan-location $loc --functions-version 4 --query defaultHostName -o tsv)
+echo Update @paymentsUrl in test-payment-service-online.http
+echo $url
+
+code=$(az functionapp keys list -n $app -g $grp --query masterKey -o tsv)
+echo Update @code in test-payment-service-online.http
+echo $code
+
+# Deploy to function app - wait a little to allow function app to be created
+cd payment-service-func
+func azure functionapp publish $app --csharp
+cd ..
+
+echo "Funtions app created: $app at $url"
+echo "Admin key: $adminkey"
