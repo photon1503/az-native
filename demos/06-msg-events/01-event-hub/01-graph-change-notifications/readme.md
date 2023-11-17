@@ -4,7 +4,17 @@
 
 [Using Azure Event Hubs to receive change notifications](https://docs.microsoft.com/en-us/graph/change-notifications-delivery)
 
+[Create your first containerized functions on Azure Container Apps](https://learn.microsoft.com/en-us/azure/azure-functions/functions-deploy-container-apps?tabs=acr%2Cbash&pivots=programming-language-csharp)
+
+[Dapr Extension for Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-dapr?tabs=in-process%2Cpreview-bundle-v4x%2Cbicep1&pivots=programming-language-csharp)
+
 ## Demo
+
+- Create Project
+
+    ```bash
+    func init graph-change-processor --worker-runtime dotnet-isolated --docker
+    ```
 
 - Add listen Claims to Event Hub
 
@@ -38,7 +48,7 @@
         "clientState": "SecretClientState"
     }
     ```
-    >Note: As alternative to REST Client subscribe using [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) in an authenticated session.
+    >Note: As alternative fetching the token using REST Client you could use [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) in an authenticated session. Be aware that you would need to create an app registration in order to be able to fetch the token. For more information check [create-appreg.azcli](/tooling/07-rest-client) in this folder.
 
     ![subscription](_images/subscription.jpg)
 
