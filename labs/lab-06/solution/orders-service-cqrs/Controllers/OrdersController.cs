@@ -13,20 +13,20 @@ namespace FoodApp
 
         private readonly EventBus eb;
 
-        public OrdersController(ISender sender,  AILogger aiLogger, EventBus bus)
+        public OrdersController(ISender sender, AILogger aiLogger, EventBus bus)
         {
             this.sender = sender;
             this.logger = aiLogger;
             this.eb = bus;
         }
-        
+
         // http://localhost:PORT/orders/create
         [HttpPost()]
         [Route("create")]
         public async Task<OrderEventResponse> CreateOrderEvent(Order order)
         {
             var resp = await sender.Send(new CreateOrderEventCommand(order));
-            
+
             // Created the Payment Request
             var paymentRequest = new PaymentRequest
             {
@@ -34,7 +34,7 @@ namespace FoodApp
                 Amount = order.Total,
                 PaymentInfo = order.Payment
             };
-            
+
             // Wrap it into our Integration Event
             eb.Publish(new OrderEvent
             {
